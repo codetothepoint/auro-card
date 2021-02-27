@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.3](https://github.com/AlaskaAirlines/auro-card/compare/v1.0.2...v1.0.3) (2021-02-27)
+
+
+### Bug Fixes
+
+* address missing space per last update to card ([71dadd9](https://github.com/AlaskaAirlines/auro-card/commit/71dadd9edf6198b3fa345e9ab6070328090fb4c8))
+
 ## [1.0.2](https://github.com/AlaskaAirlines/auro-card/compare/v1.0.1...v1.0.2) (2021-02-27)
 
 
