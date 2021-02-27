@@ -23,7 +23,10 @@ type of dependency you should use, consider reading this answer:
 
 ## WCSS dependency
 
+`@alaskaairux/webcorestylesheets": "^3.1.0"`
+
 The `auro-card` and the `auro-banner` have an opinion about use of `img` inside the `picture` element. Please [the WCSS docs](https://alaskaairlines.github.io/WebCoreStyleSheets/#core-css-#{$sym}#{$prefix}picture#{$scope}) for additional information for how to install and manage within your project.
+
 
 ### Design Token CSS Custom Property dependency
 
