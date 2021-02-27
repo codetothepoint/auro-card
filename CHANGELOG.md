@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.1](https://github.com/AlaskaAirlines/auro-card/compare/v1.0.0...v1.0.1) (2021-02-27)
+
+
+### Bug Fixes
+
+* address space between image and copy ([365d0d0](https://github.com/AlaskaAirlines/auro-card/commit/365d0d0ba79616159f8a9bc04767e7c47c3bb613))
+
 # 1.0.0 (2021-02-27)
 
 
