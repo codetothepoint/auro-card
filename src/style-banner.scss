@@ -59,6 +59,7 @@ img {
 
   .imageWrapper {
     max-width: 90%;
+    margin-bottom: 1rem;;
 
     @include auro_breakpoint($min: 414px) {
       max-width: 80%;
