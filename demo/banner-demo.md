@@ -110,7 +110,7 @@ The `picture` element could be used if necessary.
 
 <div class="exampleWrapper">
   <auro-banner hero>
-    <img src="https://picsum.photos/id/10/550/550" alt="" slot="displayImage" />
+    <img src="https://picsum.photos/id/10/550/650" alt="" slot="displayImage" />
     <span slot="prefix">Duis aute irure dolor</span>
     <span slot="title">Duis aute irure dolor.<br>Excepteur sint occaecat.</span>
     <p slot="description">
@@ -132,7 +132,7 @@ The `picture` element could be used if necessary.
 
 ```html
 <auro-banner hero>
-  <img src="https://picsum.photos/id/10/550/550" alt="" slot="displayImage" />
+  <img src="https://picsum.photos/id/10/550/650" alt="" slot="displayImage" />
   <span slot="prefix">Duis aute irure dolor</span>
   <span slot="title">Duis aute irure dolor.<br>Excepteur sint occaecat.</span>
   <p slot="description">
@@ -158,7 +158,7 @@ Notice for the `displayImage` slot, this example is using a single `img` element
 
 <div class="exampleWrapper">
   <auro-banner marquee>
-    <img src="https://picsum.photos/id/82/550/460" alt="" slot="displayImage" />
+    <img src="https://picsum.photos/id/82/550/560" alt="" slot="displayImage" />
     <span slot="prefix">Duis aute irure dolor</span>
     <span slot="title">Duis aute irure dolor.<br>Excepteur sint occaecat.</span>
     <p slot="description">
@@ -180,7 +180,7 @@ Notice for the `displayImage` slot, this example is using a single `img` element
 
 ```html
 <auro-banner marquee>
-  <img src="https://picsum.photos/id/82/450/460" alt="" slot="displayImage" />
+  <img src="https://picsum.photos/id/82/450/560" alt="" slot="displayImage" />
   <span slot="prefix">Duis aute irure dolor</span>
   <span slot="title">Duis aute irure dolor.<br>Excepteur sint occaecat.</span>
   <p slot="description">
@@ -204,7 +204,7 @@ The following example illustrates a `auro-banner` custom element with the `marqu
 
 <div class="exampleWrapper">
   <auro-banner marquee solid slim>
-    <img src="https://picsum.photos/id/1015/550/400" alt="" slot="displayImage" />
+    <img src="https://picsum.photos/id/1015/550/650" alt="" slot="displayImage" />
     <auro-alaska official ondark style="width: 192px" slot="contentImage"></auro-alaska>
     <p slot="description">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -226,7 +226,7 @@ The following example illustrates a `auro-banner` custom element with the `marqu
 
 ```html
 <auro-banner marquee solid slim>
-  <img src="https://picsum.photos/id/1015/550/460" alt="" slot="displayImage" />
+  <img src="https://picsum.photos/id/1015/550/600" alt="" slot="displayImage" />
   <auro-alaska official ondark style="width: 192px" slot="contentImage"></auro-alaska>
   <p slot="description">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

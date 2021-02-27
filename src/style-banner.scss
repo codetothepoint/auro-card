@@ -122,8 +122,18 @@ img {
   }
 
   .displayImage {
-    bottom: unset;
     position: static;
+    max-height: 17rem;
+    overflow: hidden;
+
+    @include auro_breakpoint--sm {
+      max-height: unset;
+      overflow: unset;
+    }
+
+    &::slotted(img) {
+      display: block;
+    }
   }
 
   .contentWrapper {
@@ -159,12 +169,6 @@ img {
 
 :host([marquee][solid]) {
   color: var(--auro-color-base-white);
-
-  .displayImage {
-    &::slotted(img) {
-      display: block;
-    }
-  }
 
   .bannerWrapper {
     background-color: var(--auro-color-brand-midnight-400);
