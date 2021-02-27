@@ -1,4 +1,5 @@
 .DS_Store
+.vscode/settings.json
 node_modules/
 .cache/
 
@@ -18,3 +19,6 @@ build/
 
 ## Karma code coverage reports
 coverage/
+
+## JetBrains
+.idea/

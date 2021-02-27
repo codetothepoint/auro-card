@@ -23,3 +23,22 @@ fs.readFile('src/style.css', (err, css) => {
       }
     })
 })
+
+fs.readFile('src/style-hero.css', (err, css) => {
+  postcss([autoprefixer, postcssCustomProperties, comments])
+    .use(comments({
+      remove: function(comment) { return comment[0] == "@"; }
+    }))
+    .use(removeRules({
+      rulesToRemove: {
+        ':root': '*'
+      }
+    }))
+    .process(css, { from: 'src/style-hero.css', to: 'src/style-hero.css' })
+    .then(result => {
+      fs.writeFile('src/style-hero.css', result.css, () => true)
+      if ( result.map ) {
+        fs.writeFile('src/style-hero.map', result.map, () => true)
+      }
+    })
+})

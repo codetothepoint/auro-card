@@ -4,10 +4,10 @@
 // ---------------------------------------------------------------------
 
 // Import Auro tokens
-@import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
+// @import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
 @import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SassCustomProperties";
 
-@import "./node_modules/@alaskaairux/webcorestylesheets/dist/breakpoints";
+// @import "./node_modules/@alaskaairux/webcorestylesheets/dist/breakpoints";
 @import "./node_modules/@alaskaairux/webcorestylesheets/dist/core";
 
 // Support for auroElement styles
@@ -22,14 +22,39 @@
 // never define layout that would cause effect on element outside the scope of this component
 
 
-// component shape styles
-// .auro-card {
-//   ...
-// }
+:host {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  flex-direction: column;
+  text-align: center;
+}
 
-.testClass {
-  color:  var(--auro-color-border-error-on-light);
-  border: 1px solid var(--auro-color-border-error-on-light);
-  display: inline-block;
-  padding: var(--auro-text-body-size-default);
+:host([alignLeft]) {
+  text-align: left;
+}
+
+.imageWrapper {
+  width: 19rem; //1rem grid
+  height: 19rem; //1rem grid
+  margin-top: 0;
+
+  ::slotted(img) {
+    display: block;
+    width: 100%;
+  }
+}
+
+.description {
+  max-width: 19rem; //1rem grid
+  display: block;
+}
+
+.disclaimer {
+  color: var(--auro-color-text-secondary-on-light);
+  font-size: var(--auro-text-body-size-xs);
+}
+
+auro-header {
+  max-width: 19rem;
 }

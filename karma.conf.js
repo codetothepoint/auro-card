@@ -18,7 +18,9 @@ module.exports = config => {
                 nodeResolve: true,
             },
 
-            // you can overwrite/extend the config further
+            proxies: {
+              '/pic.png': 'test/pic.png'
+            }
         }),
     );
     return config;

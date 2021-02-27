@@ -11,6 +11,7 @@
 @import './node_modules/@alaskaairux/webcorestylesheets/dist/normalize';
 @import './node_modules/@alaskaairux/webcorestylesheets/dist/essentials';
 @import './node_modules/@alaskaairux/webcorestylesheets/dist/headings';
+@import './node_modules/@alaskaairux/webcorestylesheets/dist/picture';
 
 // Import Utility classes (will produce CSS in output)
 $layout-properties: margin;
@@ -39,7 +40,7 @@ main {
   $background: var(--auro-color-base-white);
 
   background: repeating-linear-gradient( 45deg, $stripe, $stripe 10px, $background 10px, $background 20px);
-  overflow: auto;
+  overflow: hidden;
 }
 
 .exampleWrapper--ondark {

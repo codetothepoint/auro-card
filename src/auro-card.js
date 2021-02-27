@@ -1,40 +1,29 @@
+/* eslint-disable no-underscore-dangle, no-magic-numbers, max-statements */
+
 // Copyright (c) 2021 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
 // ---------------------------------------------------------------------
 
-// If use litElement base class
 import { LitElement, html, css } from "lit-element";
-
-// If using auroElement base class
-// See instructions for importing auroElement base class https://git.io/JULq4
-// import { html, css } from "lit-element";
-// import AuroElement from '@alaskaairux/webcorestylesheets/dist/auroElement/auroElement';
 
 // Import touch detection lib
 import "focus-visible/dist/focus-visible.min.js";
 import styleCss from "./style-css.js";
 
+import "@alaskaairux/auro-header";
+
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * auro-card provides users a way to ...
+ * The auro-card element provides users a flexible way to convey a summary of information.
  *
- * @attr {String} cssClass - Applies designated CSS class to DOM element.
+ * @slot title - card heading
+ * @slot image - card image placement
+ * @slot description - main body of copy
+ * @slot cta - call to action
+ * @slot disclaimer - disclaimer copy
  */
-
-// build the component class
 class AuroCard extends LitElement {
-  // constructor() {
-  //   super();
-  // }
-
-  // function to define props used within the scope of this component
-  static get properties() {
-    return {
-      // ...super.properties,
-      cssClass:   { type: String }
-    };
-  }
 
   static get styles() {
     return css`
@@ -42,14 +31,22 @@ class AuroCard extends LitElement {
     `;
   }
 
-  // When using auroElement, use the following attribute and function when hiding content from screen readers.
-  // aria-hidden="${this.hideAudible(this.hiddenAudible)}"
-
   // function that renders the HTML and CSS into  the scope of the component
   render() {
+
     return html`
-      <div class=${this.cssClass}>
-        <slot></slot>
+      <auro-header slot="title" level="2" display="600">
+        <slot name="title"></slot>
+      </auro-header>
+
+      <div class="imageWrapper">
+        <slot name="image"></slot>
+      </div>
+
+      <div>
+        <slot name="description" class="description"></slot>
+        <slot name="action"></slot>
+        <slot name="disclaimer" class="disclaimer"></slot>
       </div>
     `;
   }

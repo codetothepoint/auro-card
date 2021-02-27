@@ -26,10 +26,13 @@ const getSharedPlugins = (isLegacy) => [
 ];
 
 const modernConfig = {
-  input: 'src/auro-card.js',
+  input: {
+    ['auro-card__bundled']: './src/auro-card.js',
+    ['auro-banner__bundled']: './src/auro-banner.js'
+  },
   output: {
     format: 'esm',
-    file: 'dist/auro-card__bundled.js'
+    dir: 'dist/'
   },
   plugins: [
     // remove shady DOM polyfill for modern browsers
@@ -51,7 +54,7 @@ const modernConfig = {
   ]
 };
 
-const legacyConfig = {
+const cardConfig = {
   input: 'src/es5.js',
   output: {
     format: 'iife',
@@ -60,4 +63,13 @@ const legacyConfig = {
   plugins: getSharedPlugins(true)
 };
 
-export default [modernConfig, legacyConfig];
+const bannerConfig = {
+  input: 'src/es5.js',
+  output: {
+    format: 'iife',
+    file: 'dist/auro-banner__bundled.es5.js'
+  },
+  plugins: getSharedPlugins(true)
+};
+
+export default [modernConfig, cardConfig, bannerConfig];

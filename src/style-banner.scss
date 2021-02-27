@@ -1,0 +1,216 @@
+// Copyright (c) 2021 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// Import Auro tokens
+@import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
+@import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SassCustomProperties";
+
+@import "./node_modules/@alaskaairux/webcorestylesheets/dist/breakpoints";
+@import "./node_modules/@alaskaairux/webcorestylesheets/dist/core";
+
+// Support for auroElement styles
+// @import "./node_modules/@alaskaairux/webcorestylesheets/dist/auroElement/auroElement";
+
+// container styles - defines the look of the outer custom component
+// :host {
+//   ...
+// }
+
+// layout styles - define any layout specifications for UI that is contained WITHIN the component
+// never define layout that would cause effect on element outside the scope of this component
+
+:host {
+  color: var(--auro-color-text-primary-on-light);
+}
+
+img {
+  display: block;
+}
+
+:host([onDark]) {
+  color: var(--auro-color-base-white);
+}
+
+.description {
+  display: block;
+}
+
+.action {
+  margin: 1rem 0;
+}
+
+.disclaimer {
+  color: var(--auro-color-text-secondary-on-light);
+  font-size: var(--auro-text-body-size-xs);
+}
+
+// =-=-=-=-= billboard -=-=-=-=-=-=
+
+:host([billboard]) {
+  .bannerWrapper {
+    position: relative;
+  }
+
+  .action {
+    display: inline-block;
+  }
+
+  .imageWrapper {
+    max-width: 90%;
+
+    @include auro_breakpoint($min: 414px) {
+      max-width: 80%;
+    }
+  }
+
+  .displayImage {
+    display: block;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .bodyWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1rem;
+
+    @include auro_breakpoint--sm {
+      max-height: 24rem;
+    }
+
+    @include auro_breakpoint--md {
+      padding: 1rem;
+      min-height: 24rem;
+    }
+  }
+
+  .contentWrapper {
+    max-width: 90%;
+    margin-bottom: 150px;
+
+    @include auro_breakpoint--sm {
+      margin-bottom: 0;
+      max-width: 70%;
+    }
+
+    @include auro_breakpoint--md {
+      max-width: 60%;
+    }
+  }
+}
+
+// =-=-=-=-= hero -=-=-=-=-=-=
+
+:host([hero][ondark]) {
+  .title {
+    color: var(--auro-color-base-white);
+  }
+}
+
+:host([hero]) {
+
+  @extend :host([billboard]);
+
+  .title {
+    color: var(--auro-color-brand-midnight-400);
+  }
+
+  .displayImage {
+    bottom: unset;
+    position: static;
+  }
+
+  .contentWrapper {
+    margin: 0;
+  }
+
+  @include auro_breakpoint--sm {
+    .displayImage {
+      max-width: 50%;
+      right: 0;
+      position: absolute;
+    }
+
+    .bodyWrapper {
+      align-items: unset;
+      text-align: left;
+      width: 50%;
+    }
+
+    .contentWrapper {
+      max-width: 90%;
+    }
+  }
+}
+
+// =-=-=-=-= marquee -=-=-=-=-=-=
+
+:host([marquee][ondark]) {
+  .title {
+    color: var(--auro-color-base-white);
+  }
+}
+
+:host([marquee][solid]) {
+  color: var(--auro-color-base-white);
+
+  .displayImage {
+    &::slotted(img) {
+      display: block;
+    }
+  }
+
+  .bannerWrapper {
+    background-color: var(--auro-color-brand-midnight-400);
+  }
+
+  .bodyWrapper {
+
+    @include auro_breakpoint--sm {
+      padding-left: 3rem;
+    }
+  }
+
+  .title {
+    color: var(--auro-color-base-white);
+  }
+}
+
+:host([marquee]) {
+
+  @extend :host([hero]);
+}
+
+// =-=-=-=-= slim -=-=-=-=-=-=
+
+:host([slim]) {
+  .bodyWrapper {
+    @include auro_breakpoint--md {
+      min-height: unset;
+      padding: 2rem;
+    }
+  }
+}
+
+// =-=-=-=-= right -=-=-=-=-=-=
+
+:host([alignRight]) {
+  .bodyWrapper {
+    align-items: flex-end;
+    text-align: right;
+    width: 100%;
+  }
+
+  .contentWrapper {
+
+    @include auro_breakpoint--md {
+      max-width: 60%;
+    }
+  }
+}
