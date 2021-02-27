@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.2](https://github.com/AlaskaAirlines/auro-card/compare/v1.0.1...v1.0.2) (2021-02-27)
+
+
+### Bug Fixes
+
+* address responsive issues with image placement ([9b9f6a9](https://github.com/AlaskaAirlines/auro-card/commit/9b9f6a9285943f8395960e0837fd4dddba06ff04))
+
 ## [1.0.1](https://github.com/AlaskaAirlines/auro-card/compare/v1.0.0...v1.0.1) (2021-02-27)
 
 
