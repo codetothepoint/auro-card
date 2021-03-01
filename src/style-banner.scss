@@ -51,6 +51,7 @@ img {
 :host([billboard]) {
   .bannerWrapper {
     position: relative;
+    overflow: hidden;
   }
 
   .action {
