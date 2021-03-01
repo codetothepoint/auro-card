@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.4](https://github.com/AlaskaAirlines/auro-card/compare/v1.0.3...v1.0.4) (2021-03-01)
+
+
+### Bug Fixes
+
+* prevent billboard form overflowing ([daf3773](https://github.com/AlaskaAirlines/auro-card/commit/daf37731a3cfa58bdc17e8c1b3a4d20c8717d749))
+
 ## [1.0.3](https://github.com/AlaskaAirlines/auro-card/compare/v1.0.2...v1.0.3) (2021-02-27)
 
 
