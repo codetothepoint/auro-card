@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.5](https://github.com/AlaskaAirlines/auro-card/compare/v1.0.4...v1.0.5) (2021-03-03)
+
+
+### Bug Fixes
+
+* remove extra padding from banner in hero mode ([90b6497](https://github.com/AlaskaAirlines/auro-card/commit/90b649768c2fa682a81fb71c19516004f87f8ec3))
+
 ## [1.0.4](https://github.com/AlaskaAirlines/auro-card/compare/v1.0.3...v1.0.4) (2021-03-01)
 
 
