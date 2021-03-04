@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.6](https://github.com/AlaskaAirlines/auro-card/compare/v1.0.5...v1.0.6) (2021-03-04)
+
+
+### Bug Fixes
+
+* unset overflow hidden on ohter variants ([dc80086](https://github.com/AlaskaAirlines/auro-card/commit/dc80086d2a78fcbdc457fe8c3b649a4a863f53b3))
+
 ## [1.0.5](https://github.com/AlaskaAirlines/auro-card/compare/v1.0.4...v1.0.5) (2021-03-03)
 
 
