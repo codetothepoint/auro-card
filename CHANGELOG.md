@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.7](https://github.com/AlaskaAirlines/auro-card/compare/v1.0.6...v1.0.7) (2021-03-05)
+
+
+### Bug Fixes
+
+* remove max height from hero and marquee ([737656b](https://github.com/AlaskaAirlines/auro-card/commit/737656b2f2648d1c2cf6fe07f25b80d061344541))
+
 ## [1.0.6](https://github.com/AlaskaAirlines/auro-card/compare/v1.0.5...v1.0.6) (2021-03-04)
 
 
