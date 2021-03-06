@@ -25,123 +25,109 @@
   color: var(--auro-color-text-primary-on-light);
 }
 
-img {
-  display: block;
-}
-
 :host([onDark]) {
-  color: var(--auro-color-base-white);
+  @extend %auro-banner--ondark;
 }
 
-.description {
-  display: block;
-}
-
-.action {
-  margin: 1rem 0;
-}
-
-.disclaimer {
-  color: var(--auro-color-text-secondary-on-light);
-  font-size: var(--auro-text-body-size-xs);
-}
-
-// =-=-=-=-= billboard -=-=-=-=-=-=
-
-:host([billboard]) {
+// =-=-=-=-= common styles -=-=-=-=-=-=
+%auro-banner {
+  img {
+    display: block;
+  }
+  .disclaimer {
+    color: var(--auro-color-text-secondary-on-light);
+    font-size: var(--auro-text-body-size-xs);
+  }
   .bannerWrapper {
     position: relative;
     overflow: hidden;
   }
-
   .action {
     display: inline-block;
+    margin: 1rem 0;
   }
-
   .imageWrapper {
-    max-width: 90%;
-    margin-bottom: 1rem;;
-
-    @include auro_breakpoint($min: 414px) {
-      max-width: 80%;
-    }
+    margin-bottom: 1rem;
   }
-
   .displayImage {
     display: block;
     position: absolute;
     bottom: 0;
   }
-
   .bodyWrapper {
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     text-align: center;
     padding: 2rem 1rem;
-
-    @include auro_breakpoint--sm {
-      max-height: 24rem;
-    }
-
+    overflow: hidden;
     @include auro_breakpoint--md {
       padding: 1rem;
-      min-height: 24rem;
     }
   }
-
+  .title {
+    color: var(--auro-color-brand-midnight-400);
+  }
+  .description {
+    display: block;
+  }
   .contentWrapper {
-    max-width: 90%;
     margin-bottom: 150px;
-
     @include auro_breakpoint--sm {
       margin-bottom: 0;
-      max-width: 70%;
     }
+  }
+}
+// =-=-=-=-= ondark styles -=-=-=-=-=-=
 
+%auro-banner--ondark {
+  .title {
+    color: var(--auro-color-base-white);
+  }
+  color: var(--auro-color-base-white);
+}
+
+// =-=-=-=-= billboard -=-=-=-=-=-=
+
+:host([billboard]) {
+  @extend %auro-banner;
+  @include auro_breakpoint--sm {
+    max-height: 24rem;
+  }
+  .bodyWrapper {
+    align-items: center;
+    padding: 2rem;
+    @include auro_breakpoint--sm {
+      padding: 2rem 8rem;
+    }
     @include auro_breakpoint--md {
-      max-width: 60%;
+      padding: 2rem 10rem;
+    }
+  }
+  .imageWrapper {
+    margin-bottom: 1rem;
+  }
+  .contentWrapper {
+    @include auro_breakpoint--sm {
+      margin-bottom: 0;
     }
   }
 }
 
 // =-=-=-=-= hero -=-=-=-=-=-=
 
-:host([hero][ondark]) {
-  .title {
-    color: var(--auro-color-base-white);
-  }
-}
-
 :host([hero]) {
-  @extend :host([billboard]);
-  .bannerWrapper {
-    overflow: unset;
-  }
-
-  .title {
-    color: var(--auro-color-brand-midnight-400);
-  }
-
+  @extend %auro-banner;
   .displayImage {
     position: static;
-    max-height: 17rem;
     overflow: hidden;
-
-    @include auro_breakpoint--sm {
-      max-height: unset;
-      overflow: unset;
-    }
-
     &::slotted(img) {
       display: block;
     }
   }
-
   .contentWrapper {
-    margin: 0;
+    margin: 0 auto;
   }
 
   @include auro_breakpoint--sm {
@@ -150,62 +136,29 @@ img {
       right: 0;
       position: absolute;
     }
-
     .bodyWrapper {
-      align-items: unset;
       text-align: left;
       width: 50%;
       padding-left: 0;
-      max-height: unset;
-    }
-
-    .contentWrapper {
-      max-width: 90%;
     }
   }
 }
 
 // =-=-=-=-= marquee -=-=-=-=-=-=
 
-:host([marquee][ondark]) {
-  .title {
-    color: var(--auro-color-base-white);
-  }
-}
-
-:host([marquee][solid]) {
-  color: var(--auro-color-base-white);
-
-  .bannerWrapper {
-    background-color: var(--auro-color-brand-midnight-400);
-  }
-
-  .bodyWrapper {
-
-    @include auro_breakpoint--sm {
-      padding-left: 3rem;
-    }
-  }
-
-  .title {
-    color: var(--auro-color-base-white);
-  }
-}
 
 :host([marquee]) {
   @extend :host([hero]);
-  .bannerWrapper {
-    overflow: unset;
-  }
 }
 
-// =-=-=-=-= slim -=-=-=-=-=-=
-
-:host([slim]) {
+:host([marquee][solid]) {
+  @extend %auro-banner--ondark;
+  .bannerWrapper {
+    background-color: var(--auro-color-brand-midnight-400);
+  }
   .bodyWrapper {
-    @include auro_breakpoint--md {
-      min-height: unset;
-      padding: 2rem;
+    @include auro_breakpoint--sm {
+      padding: 3rem;
     }
   }
 }
@@ -218,11 +171,18 @@ img {
     text-align: right;
     width: 100%;
   }
+}
 
-  .contentWrapper {
+// =-=-=-=-= slim -=-=-=-=-=-=
 
+:host([slim]) {
+  .bodyWrapper {
+    @include auro_breakpoint--sm {
+      padding: 2rem;
+      min-height: unset;
+    }
     @include auro_breakpoint--md {
-      max-width: 60%;
+      padding: 2rem 3rem;
     }
   }
 }
