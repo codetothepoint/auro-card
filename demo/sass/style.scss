@@ -39,15 +39,13 @@ main {
 .exampleWrapper {
   $stripe: #f3f3f3;
   $background: var(--auro-color-base-white);
-
   background: repeating-linear-gradient( 45deg, $stripe, $stripe 10px, $background 10px, $background 20px);
-  overflow: hidden;
+
 }
 
 .exampleWrapper--ondark {
   $stripe: var(--auro-color-background-darkest);
   $background: var(--auro-color-background-darker);
-
   background: repeating-linear-gradient( 45deg, $stripe, $stripe 10px, $background 10px, $background 20px);
 }
 
