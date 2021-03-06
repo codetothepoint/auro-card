@@ -96,7 +96,7 @@ This allows the editor the upmost in image flexibility for cropped images placed
 ```
 </auro-accordion>
 
-### Slim / alignRight / onDark
+## Billboard / slim / alignRight / onDark
 
 The following example illustrates a series of additional API options available to the `auro-banner` element. In this example, this shows how a user can augment the `billboard` theme of the `auro-banner`.
 
@@ -154,7 +154,7 @@ For the call-to-action button, see in the example code that it is required to se
 
 
 
-## Slim / alignLeft / onDark
+## Billboard / slim / alignLeft / onDark
 
 The following example illustrates an option to left align the text `alignLeft` along with `slim` to reduce the padding and `ondark` to change the text to white.
 
@@ -322,7 +322,7 @@ The following example illustrates a `auro-banner` custom element with the `marqu
 ```
 </auro-accordion>
 
-## Marquee solid
+## Marquee / solid
 
 The following example illustrates a `auro-banner` custom element with the `marquee solid` template style. With this configuration, `onDark` is implied.
 
@@ -334,7 +334,7 @@ Notice for the `displayImage` slot, this example is using a single `img` element
 
 The `picture` element could be used if necessary.
 <div class="exampleWrapper">
-  <auro-banner marquee solid slim>
+  <auro-banner marquee solid>
     <img src="https://picsum.photos/id/1015/550/650" alt="" slot="displayImage" />
     <auro-alaska official ondark style="width: 192px" slot="contentImage"></auro-alaska>
     <p slot="description">
@@ -355,7 +355,7 @@ The `picture` element could be used if necessary.
 <span slot="trigger">See code</span>
 
 ```html
-<auro-banner marquee solid slim>
+<auro-banner marquee solid>
     <img src="https://picsum.photos/id/1015/550/650" alt="" slot="displayImage" />
     <auro-alaska official ondark style="width: 192px" slot="contentImage"></auro-alaska>
     <p slot="description">
