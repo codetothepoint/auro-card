@@ -152,6 +152,64 @@ For the call-to-action button, see in the example code that it is required to se
 ```
 </auro-accordion>
 
+
+
+## Slim / alignLeft / onDark
+
+The following example illustrates an option to left align the text `alignLeft` along with `slim` to reduce the padding and `ondark` to change the text to white.
+
+<div class="exampleWrapper">
+  <auro-banner billboard slim alignLeft onDark>
+    <picture slot="displayImage">
+      <source srcset="https://picsum.photos/id/42/2048/1200" media="(min-width: 1024px)">
+      <source media="(min-width:660px)" srcset="https://picsum.photos/id/42/900/800">
+      <source srcset="https://picsum.photos/id/42/660/3000">
+      <img src="https://picsum.photos/id/42/225/550" alt="">
+    </picture>
+    <span slot="title">Beverages and cocktails</span>
+    <p slot="description">
+      <span style="max-width: 360px;display: block;">Enjoy soft drinks, fresh Starbucks® coffee – including lattes and cappuccinos, and Teavana® tea while you relax. Or try our famous Bloody Mary.</span>
+    </p>
+    <auro-hyperlink
+      cta
+      secondary
+      ondark
+      href="/"
+      slot="action"
+      target="_blank">
+      More info
+    </auro-hyperlink>
+  </auro-banner>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+<span slot="trigger">See code</span>
+
+```html
+<auro-banner billboard slim alignLeft onDark>
+    <picture slot="displayImage">
+      <source srcset="https://picsum.photos/id/42/2048/1200" media="(min-width: 1024px)">
+      <source media="(min-width:660px)" srcset="https://picsum.photos/id/42/900/800">
+      <source srcset="https://picsum.photos/id/42/660/3000">
+      <img src="https://picsum.photos/id/42/225/550" alt="">
+    </picture>
+    <span slot="title">Beverages and cocktails</span>
+    <p slot="description">
+      <span style="max-width: 360px;display: block;">Enjoy soft drinks, fresh Starbucks® coffee – including lattes and cappuccinos, and Teavana® tea while you relax. Or try our famous Bloody Mary.</span>
+    </p>
+    <auro-hyperlink
+      cta
+      secondary
+      ondark
+      href="/"
+      slot="action"
+      target="_blank">
+      More info
+    </auro-hyperlink>
+  </auro-banner>
+```
+</auro-accordion>
+
 ## Hero
 
 The following example illustrates a `auro-banner` custom element with the `hero` template style. This example also illustrates the use of the `prefix` slot.
