@@ -38,7 +38,7 @@ The background image slot is configured to work with the HTML [picture](https://
 </picture>
 ```
 
-This allows the editor the upmost in image flexibility for cropped images placed at different breakpoints. A slotted `img` element is the default image shown when less than the first defined breakpoint.
+<br>This allows the editor the upmost in image flexibility for cropped images placed at different breakpoints. A slotted `img` element is the default image shown when less than the first defined breakpoint.<br><br>
 
 <div class="exampleWrapper">
   <auro-banner billboard>
@@ -335,7 +335,7 @@ Notice for the `displayImage` slot, this example is using a single `img` element
 The `picture` element could be used if necessary.
 <div class="exampleWrapper">
   <auro-banner marquee solid>
-    <img src="https://picsum.photos/id/1015/550/650" alt="" slot="displayImage" />
+    <img src="https://picsum.photos/id/1015/550/675" alt="" slot="displayImage" />
     <auro-alaska official ondark style="width: 192px" slot="contentImage"></auro-alaska>
     <p slot="description">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -356,7 +356,7 @@ The `picture` element could be used if necessary.
 
 ```html
 <auro-banner marquee solid>
-    <img src="https://picsum.photos/id/1015/550/650" alt="" slot="displayImage" />
+    <img src="https://picsum.photos/id/1015/550/675" alt="" slot="displayImage" />
     <auro-alaska official ondark style="width: 192px" slot="contentImage"></auro-alaska>
     <p slot="description">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

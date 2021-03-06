@@ -20,8 +20,9 @@ import "@alaskaairux/auro-header";
  * @attr {Boolean} hero - to be used for hero style configuration
  * @attr {Boolean} marquee - to be used for marquee style configuration
  * @attr {Boolean} solid - to be used when you want a solid color as opposed to a transparent background
- * @attr {Boolean} slim - to be used when we want a smaller height to the default banner
+ * @attr {Boolean} slim - to be used when we want a slimmer padding to the default banner
  * @attr {Boolean} alignRight - to be used when we want the text aligned to the right
+ * @attr {Boolean} alignLeft - to be used when we want the text aligned to the left
  * @attr {Boolean} onDark - to be used when the background image or color is dark and changes the text and cta color
  * @slot displayImage - placement for `<picture />` or `<img>` elements
  * @slot prefix - placement for smaller text above title
