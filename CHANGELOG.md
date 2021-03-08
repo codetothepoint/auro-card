@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [1.1.0](https://github.com/AlaskaAirlines/auro-card/compare/v1.0.7...v1.1.0) (2021-03-08)
+
+
+### Bug Fixes
+
+* the overflow hidden masks issues ([857a879](https://github.com/AlaskaAirlines/auro-card/commit/857a8796d0910eac61f6341a0be0e1e2c7d0e407))
+
+
+### Features
+
+* add alignleft attribute and example ([49802c6](https://github.com/AlaskaAirlines/auro-card/commit/49802c6c43b65290db38eb56b73f35eb4be7919e))
+
 ## [1.0.7](https://github.com/AlaskaAirlines/auro-card/compare/v1.0.6...v1.0.7) (2021-03-05)
 
 
