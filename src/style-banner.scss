@@ -44,10 +44,10 @@
   }
   .action {
     display: inline-block;
-    margin: 1rem 0;
+    margin: var(--auro-size-md) 0;
   }
   .imageWrapper {
-    margin-bottom: 1rem;
+    margin-bottom: var(--auro-size-md);
   }
   .displayImage {
     display: block;
@@ -60,10 +60,10 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: 2rem 1rem;
+    padding: var(--auro-size-xl) var(--auro-size-md);
     overflow: hidden;
     @include auro_breakpoint--md {
-      padding: 1rem;
+      padding: var(--auro-size-md);
     }
   }
   .title {
@@ -97,16 +97,16 @@
   }
   .bodyWrapper {
     align-items: center;
-    padding: 2rem;
+    padding: var(--auro-size-xl);
     @include auro_breakpoint--sm {
-      padding: 2rem 8rem;
+      padding: var(--auro-size-xl) 8rem;
     }
     @include auro_breakpoint--md {
-      padding: 2rem 10rem;
+      padding: var(--auro-size-xl) 10rem;
     }
   }
   .imageWrapper {
-    margin-bottom: 1rem;
+    margin-bottom: var(--auro-size-xl);
   }
   .contentWrapper {
     @include auro_breakpoint--sm {
@@ -158,7 +158,7 @@
   }
   .bodyWrapper {
     @include auro_breakpoint--sm {
-      padding: 3rem;
+      padding: var(--auro-size-xxl);
     }
   }
 }
@@ -189,11 +189,11 @@
 :host([slim]) {
   .bodyWrapper {
     @include auro_breakpoint--sm {
-      padding: 2rem;
+      padding: var(--auro-size-xl);
       min-height: unset;
     }
     @include auro_breakpoint--md {
-      padding: 2rem 3rem;
+      padding: var(--auro-size-xl) var(--auro-size-xxl);
     }
   }
 }
