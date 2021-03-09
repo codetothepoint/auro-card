@@ -6,10 +6,11 @@ The auro-card-hero element provides users a flexible way to convey a summary of 
 
 | Attribute    | Type      | Description                                      |
 |--------------|-----------|--------------------------------------------------|
+| `alignLeft`  | `Boolean` | to be used when we want the text aligned to the left |
 | `alignRight` | `Boolean` | to be used when we want the text aligned to the right |
 | `billboard`  | `Boolean` | to be used for billboard style configuration     |
 | `onDark`     | `Boolean` | to be used when the background image or color is dark and changes the text and cta color |
-| `slim`       | `Boolean` | to be used when we want a smaller height to the default banner |
+| `slim`       | `Boolean` | to be used when we want a slimmer padding to the default banner |
 | `solid`      | `Boolean` | to be used when you want a solid color as opposed to a transparent background |
 
 ## Properties
