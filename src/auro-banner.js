@@ -1,3 +1,4 @@
+/* eslint-disable no-negated-condition */
 /* eslint-disable no-underscore-dangle, no-magic-numbers, max-statements */
 
 // Copyright (c) 2021 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
@@ -19,6 +20,7 @@ import "@alaskaairux/auro-header";
  * @attr {Boolean} billboard - to be used for billboard style configuration
  * @attr {Boolean} hero - to be used for hero style configuration
  * @attr {Boolean} marquee - to be used for marquee style configuration
+ * @attr {Boolean} roundedBorder - to be used for roundedBorder style configuration
  * @attr {Boolean} solid - to be used when you want a solid color as opposed to a transparent background
  * @attr {Boolean} slim - to be used when we want a slimmer padding to the default banner
  * @attr {Boolean} alignRight - to be used when we want the text aligned to the right
@@ -34,6 +36,20 @@ import "@alaskaairux/auro-header";
  */
 class AuroBanner extends LitElement {
 
+
+    // This function removes a CSS selector if the footer slot is empty
+    firstUpdated() {
+      const slotNodes = this.shadowRoot.querySelectorAll(`.bannerWrapper slot`);
+
+      for (const item of slotNodes) {
+        this.slt = item.assignedNodes();
+        // eslint-disable-next-line no-magic-numbers
+        if (this.slt.length === 0) {
+          item.removeAttribute("class");
+        }
+      }
+    }
+
   static get properties() {
     return {
       ...super.properties,
@@ -41,6 +57,9 @@ class AuroBanner extends LitElement {
         type: Boolean
       },
       marquee: {
+        type: Boolean
+      },
+      roundedBorder: {
         type: Boolean
       }
     };
@@ -57,11 +76,14 @@ class AuroBanner extends LitElement {
 
     return html`
       <div class="bannerWrapper">
-
-        <slot name="displayImage" class="displayImage"></slot>
+      ${!this.roundedBorder
+        ? html`
+        <slot name="displayImage" class="displayImage"></slot>`
+        : html``
+      }
 
         <div class="bodyWrapper">
-          ${this.hero && !this.marquee
+          ${this.hero
             ? html`
               <auro-header level="2" display="300" margin="top" size="none" class="title prefix">
                 <slot name="prefix"></slot>
@@ -73,7 +95,7 @@ class AuroBanner extends LitElement {
             : html``
           }
 
-          ${this.marquee && !this.hero
+          ${this.marquee
             ? html`
               <auro-header level="2" display="400" margin="both" size="none" class="title marquee">
                 <slot name="title"></slot>
@@ -81,7 +103,7 @@ class AuroBanner extends LitElement {
             : html``
           }
 
-          ${!this.marquee && !this.hero
+          ${!this.roundedBorder && !this.marquee && !this.hero
             ? html`
               <auro-header level="2" display="600" margin="both" size="none" class="title">
                 <slot name="title"></slot>
@@ -89,11 +111,21 @@ class AuroBanner extends LitElement {
             : html``
           }
 
-          <div class="imageWrapper">
-            <slot name="contentImage"></slot>
-          </div>
+          <slot name="contentImage" class="imageWrapper"></slot>
+
 
           <div class="contentWrapper">
+          ${this.roundedBorder
+            ? html`
+              <auro-header level="2" display="300" margin="both" size="none" class="title prefix">
+                <slot name="prefix"></slot>
+              </auro-header>
+
+              <auro-header level="2" display="600" margin="both" size="none" class="title">
+                <slot name="title"></slot>
+              </auro-header>`
+            : html``
+          }
             <slot name="description" class="description"></slot>
             <slot name="action" class="action"></slot>
             <slot name="disclaimer" class="disclaimer"></slot>

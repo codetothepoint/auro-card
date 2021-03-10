@@ -34,26 +34,34 @@
   img {
     display: block;
   }
+
   .disclaimer {
     color: var(--auro-color-text-secondary-on-light);
     font-size: var(--auro-text-body-size-xs);
+    line-height: var(--auro-text-body-size-xs);
   }
+
   .bannerWrapper {
     position: relative;
     overflow: hidden;
   }
+
   .action {
     display: inline-block;
     margin: var(--auro-size-md) 0;
   }
+
   .imageWrapper {
     margin-bottom: var(--auro-size-md);
+    display: block;
   }
+
   .displayImage {
     display: block;
     position: absolute;
     bottom: 0;
   }
+
   .bodyWrapper {
     position: relative;
     display: flex;
@@ -62,18 +70,24 @@
     text-align: center;
     padding: var(--auro-size-xl) var(--auro-size-md);
     overflow: hidden;
+
     @include auro_breakpoint--md {
       padding: var(--auro-size-md);
     }
   }
+
   .title {
     color: var(--auro-color-brand-midnight-400);
+    margin-bottom: var(--auro-size-md);
   }
+
   .description {
     display: block;
   }
+
   .contentWrapper {
     margin-bottom: 150px;
+
     @include auro_breakpoint--sm {
       margin-bottom: 0;
     }
@@ -82,32 +96,40 @@
 // =-=-=-=-= ondark styles -=-=-=-=-=-=
 
 %auro-banner--ondark {
+  color: var(--auro-color-base-white);
+
   .title {
     color: var(--auro-color-base-white);
   }
-  color: var(--auro-color-base-white);
+
 }
 
 // =-=-=-=-= billboard -=-=-=-=-=-=
 
 :host([billboard]) {
   @extend %auro-banner;
+
   @include auro_breakpoint--sm {
     max-height: 24rem;
   }
+
   .bodyWrapper {
     align-items: center;
     padding: var(--auro-size-xl);
+
     @include auro_breakpoint--sm {
       padding: var(--auro-size-xl) 8rem;
     }
+
     @include auro_breakpoint--md {
       padding: var(--auro-size-xl) 10rem;
     }
   }
   .imageWrapper {
-    margin-bottom: var(--auro-size-xl);
+    display: block;
+    margin-bottom: var(--auro-size-md);
   }
+
   .contentWrapper {
     @include auro_breakpoint--sm {
       margin-bottom: 0;
@@ -119,9 +141,11 @@
 
 :host([hero]) {
   @extend %auro-banner;
+
   .displayImage {
     position: static;
     overflow: hidden;
+
     &::slotted(img) {
       display: block;
     }
@@ -136,6 +160,7 @@
       right: 0;
       position: absolute;
     }
+
     .bodyWrapper {
       text-align: left;
       width: 50%;
@@ -146,16 +171,17 @@
 
 // =-=-=-=-= marquee -=-=-=-=-=-=
 
-
 :host([marquee]) {
   @extend :host([hero]);
 }
 
 :host([marquee][solid]) {
   @extend %auro-banner--ondark;
+
   .bannerWrapper {
     background-color: var(--auro-color-brand-midnight-400);
   }
+
   .bodyWrapper {
     @include auro_breakpoint--sm {
       padding: var(--auro-size-xxl);
@@ -163,9 +189,59 @@
   }
 }
 
+// =-=-=-=-= roundedBorder -=-=-=-=-=-=
+
+:host([roundedBorder]),
+:host([roundedBorder][alignLeft]) {
+  @extend %auro-banner;
+
+  .bannerWrapper {
+    border: 1px solid var(--auro-color-border-primary-on-light);
+    border-radius: 5px;
+  }
+
+  .contentWrapper {
+    margin: 0 auto;
+    flex-basis: 750px;
+  }
+
+  .action {
+    margin: 0 0 1rem;
+  }
+
+  .description p {
+    margin: 0;
+  }
+
+  .bodyWrapper {
+    padding: 1rem;
+    align-items: center;
+
+    @include auro_breakpoint--sm {
+      flex-direction: row;
+      padding: 1rem 2rem;
+    }
+  }
+
+  .imageWrapper {
+
+    @include auro_breakpoint--sm {
+      flex-basis: 435px;
+      display: flex;
+      margin-right: 2rem;
+      margin-bottom: 0;
+    }
+
+    @include auro_breakpoint--md {
+      flex-basis: 400px;
+    }
+  }
+}
+
 // =-=-=-=-= right -=-=-=-=-=-=
 
 :host([alignRight]) {
+
   .bodyWrapper {
     align-items: flex-end;
     text-align: right;
@@ -176,6 +252,7 @@
 // =-=-=-=-= left -=-=-=-=-=-=
 
 :host([alignLeft]) {
+
   .bodyWrapper {
     align-items: flex-start;
     text-align: left;
@@ -183,15 +260,16 @@
   }
 }
 
-
 // =-=-=-=-= slim -=-=-=-=-=-=
 
 :host([slim]) {
+
   .bodyWrapper {
     @include auro_breakpoint--sm {
       padding: var(--auro-size-xl);
       min-height: unset;
     }
+
     @include auro_breakpoint--md {
       padding: var(--auro-size-xl) var(--auro-size-xxl);
     }
