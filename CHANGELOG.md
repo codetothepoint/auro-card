@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [1.2.0](https://github.com/AlaskaAirlines/auro-card/compare/v1.1.0...v1.2.0) (2021-03-11)
+
+
+### Features
+
+* add rounded border variant for cc ads ([35cd4b2](https://github.com/AlaskaAirlines/auro-card/commit/35cd4b24a7605474d568bfe9c1e6f8eed6fd3af1))
+
 # [1.1.0](https://github.com/AlaskaAirlines/auro-card/compare/v1.0.7...v1.1.0) (2021-03-08)
 
 
