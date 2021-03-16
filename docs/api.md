@@ -15,10 +15,11 @@ The auro-card-hero element provides users a flexible way to convey a summary of 
 
 ## Properties
 
-| Property  | Attribute | Type      | Description                                |
-|-----------|-----------|-----------|--------------------------------------------|
-| `hero`    | `hero`    | `Boolean` | to be used for hero style configuration    |
-| `marquee` | `marquee` | `Boolean` | to be used for marquee style configuration |
+| Property        | Attribute       | Type      | Description                                      |
+|-----------------|-----------------|-----------|--------------------------------------------------|
+| `hero`          | `hero`          | `Boolean` | to be used for hero style configuration          |
+| `marquee`       | `marquee`       | `Boolean` | to be used for marquee style configuration       |
+| `roundedBorder` | `roundedBorder` | `Boolean` | to be used for roundedBorder style configuration |
 
 ## Slots
 

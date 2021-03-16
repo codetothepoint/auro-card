@@ -24,7 +24,7 @@ fs.readFile('src/style.css', (err, css) => {
     })
 })
 
-fs.readFile('src/style-hero.css', (err, css) => {
+fs.readFile('src/style-banner.css', (err, css) => {
   postcss([autoprefixer, postcssCustomProperties, comments])
     .use(comments({
       remove: function(comment) { return comment[0] == "@"; }
@@ -34,11 +34,11 @@ fs.readFile('src/style-hero.css', (err, css) => {
         ':root': '*'
       }
     }))
-    .process(css, { from: 'src/style-hero.css', to: 'src/style-hero.css' })
+    .process(css, { from: 'src/style-banner.css', to: 'src/style-banner.css' })
     .then(result => {
-      fs.writeFile('src/style-hero.css', result.css, () => true)
+      fs.writeFile('src/style-banner.css', result.css, () => true)
       if ( result.map ) {
-        fs.writeFile('src/style-hero.map', result.map, () => true)
+        fs.writeFile('src/style-banner.map', result.map, () => true)
       }
     })
 })
