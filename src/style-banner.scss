@@ -211,6 +211,7 @@
 
     @include auro_breakpoint--sm {
       flex-basis: 70%;
+      flex-grow: 1;
     }
   }
 
@@ -223,26 +224,28 @@
   }
 
   .bodyWrapper {
-    padding: 1rem;
+    padding: var(--auro-size-md);
+    @include auro_breakpoint--md {
+      padding: var(--auro-size-lg);
+    }
+
+    @include auro_breakpoint--lg {
+      padding: var(--auro-size-xl);
+    }
     align-items: center;
 
     @include auro_breakpoint--sm {
       flex-direction: row;
-      padding: 1rem 2rem;
     }
   }
 
   .imageWrapper {
 
     @include auro_breakpoint--sm {
-      flex-basis: 435px;
+      flex-basis: 30%;
       display: flex;
       margin-right: 2rem;
       margin-bottom: 0;
-    }
-
-    @include auro_breakpoint--md {
-      flex-basis: 400px;
     }
   }
 }
@@ -254,7 +257,6 @@
   .bodyWrapper {
     align-items: flex-end;
     text-align: right;
-    width: 100%;
   }
 }
 
@@ -265,7 +267,6 @@
   .bodyWrapper {
     align-items: flex-start;
     text-align: left;
-    width: 100%;
   }
 }
 

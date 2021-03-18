@@ -392,7 +392,7 @@ The following example illustrates a `auro-banner` custom element with the `round
 
 <div class="exampleWrapper">
   <auro-banner roundedBorder alignLeft>
-  <img src="https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/common-assets/bank/2020/Visa-2020.png?la=en" alt="" slot="contentImage" />
+  <img src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="" slot="contentImage" />
     <span slot="prefix">Prefix - Limited Time</span>
     <span slot="title">Title - Irure dolor.</span>
     <p slot="description">
@@ -417,7 +417,7 @@ The following example illustrates a `auro-banner` custom element with the `round
 
 ```html
 <auro-banner roundedBorder alignLeft>
-  <img src="https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/common-assets/bank/2020/Visa-2020.png?la=en" alt="" slot="contentImage" />
+  <img src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="" slot="contentImage" />
   <span slot="prefix">Prefix - Limited Time</span>
   <span slot="title">Title - Irure dolor.</span>
   <p slot="description">
