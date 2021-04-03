@@ -1,29 +1,29 @@
 # Banner
 
-The `auro-banner` element provides users a flexible way to convey a summary of information. The primary elements of a banner include an image, and details.
+The `<auro-banner>` element provides users a flexible way to convey a summary of information. The primary elements of a banner include an image, and details.
 
 The details are broken down into `prefix`, `title`, `description`, `action`, and `disclaimer`.
 
 ## Component use cases
 
-Use the `auro-banner` element to:
+Use the `<auro-banner>` element to:
 
 * grab the attention of a user
 * direct your user to another resource for further information
 
 ## Do not...
 
-Use `auro-banner` as the primary source of information.
+Use `<auro-banner>` as the primary source of information.
 
 ## Default element
 
-The default `auro-banner` element features configuration options when using using the `displayImage`, `contentImage`, `prefix`, `title`, `description`, `action` and `disclaimer` slots for structured content placement.
+The default `<auro-banner>` element features configuration options when using using the `displayImage`, `contentImage`, `prefix`, `title`, `description`, `action` and `disclaimer` slots for structured content placement.
 
 Notice the use of the [auro-hyperlink](https://auro.alaskaair.com/components/auro/hyperlink) element and the `action` slot in the following examples. All the [properties](https://auro.alaskaair.com/components/auro/hyperlink/api) of the Hyperlink element are directly applicable.
 
 ## Billboard
 
-The `auro-banner` element with the `billboard` property features a single configuration using the `displayImage`, `contentImage`, `description`, `action` and `disclaimer` slots for structured content placement.
+The `<auro-banner>` element with the `billboard` property features a single configuration using the `displayImage`, `contentImage`, `description`, `action` and `disclaimer` slots for structured content placement.
 
 ### Background image slot
 
@@ -37,8 +37,11 @@ The background image slot is configured to work with the HTML [picture](https://
   <img src="https://picsum.photos/id/430/225/550" alt="" />
 </picture>
 ```
+<br>
 
-<br>This allows the editor the upmost in image flexibility for cropped images placed at different breakpoints. A slotted `img` element is the default image shown when less than the first defined breakpoint.<br><br>
+This allows the editor the upmost in image flexibility for cropped images placed at different breakpoints. A slotted `<img>` element is the default image shown when less than the first defined breakpoint.
+
+By default `<img>` elements are `inline` elements and will add a few pixels of space below the image. To counter this, either set `display: block` on the `<img>` element, or add this [WCSS pre-defined selector](https://alaskaairlines.github.io/WebCoreStyleSheets/#core-css-#{$sym}#{$prefix}picture#{$scope}) to your project.<br><br>
 
 <div class="exampleWrapper">
   <auro-banner billboard>
@@ -102,9 +105,9 @@ The background image slot is configured to work with the HTML [picture](https://
 
 ## Billboard / slim / alignRight / onDark
 
-The following example illustrates a series of additional API options available to the `auro-banner` element. In this example, this shows how a user can augment the `billboard` theme of the `auro-banner`.
+The following example illustrates a series of additional API options available to the `<auro-banner>` element. In this example, this shows how a user can augment the `billboard` theme of the `<auro-banner>`.
 
-For the call-to-action button, see in the example code that it is required to set the `onDark` attribute on the `auro-hyperlink` element itself. This is **not** controlled by the `auro-banner` element.
+For the call-to-action button, see in the example code that it is required to set the `onDark` attribute on the `<auro-hyperlink>` element itself. This is **not** controlled by the `<auro-banner>` element.
 
 <div class="exampleWrapper">
   <auro-banner billboard slim alignRight ondark>
@@ -224,7 +227,7 @@ The following example illustrates an option to left align the text `alignLeft` a
 
 ## Hero
 
-The following example illustrates a `auro-banner` custom element with the `hero` template style. This example also illustrates the use of the `prefix` slot.
+The following example illustrates a `<auro-banner>` custom element with the `hero` template style. This example also illustrates the use of the `prefix` slot.
 
 <div class="exampleWrapper">
   <auro-banner hero>
@@ -278,16 +281,14 @@ The following example illustrates a `auro-banner` custom element with the `hero`
 
 ## Marquee
 
-The following example illustrates a `auro-banner` custom element with the `marquee` template style. This template configuration also supports the `slim` and `onDark` attributes.
-
-**NOTE:** The use of `style="display: block"` on the `img` element. This is a preference of the design, but not a style that can be controlled from the shadow DOM. This style must be applied by the user of the element in this context.
+The following example illustrates a `<auro-banner>` custom element with the `marquee` template style. This template configuration also supports the `slim` and `onDark` attributes.
 
 <div class="exampleWrapper">
   <auro-banner marquee>
     <picture slot="displayImage">
       <source srcset="https://picsum.photos/id/154/2048/2000" media="(min-width: 1024px)">
       <source srcset="https://picsum.photos/id/154/736/1400" media="(min-width:660px)">
-      <img src="https://picsum.photos/id/154/660/420" alt="" style="display: block;">
+      <img src="https://picsum.photos/id/154/660/420" alt="">
     </picture>
     <span slot="prefix">Duis aute irure dolor</span>
     <span slot="title">Duis aute irure dolor.<br>Excepteur sint occaecat.</span>
@@ -313,7 +314,7 @@ The following example illustrates a `auro-banner` custom element with the `marqu
   <picture slot="displayImage">
     <source srcset="https://picsum.photos/id/154/2048/2000" media="(min-width: 1024px)">
     <source srcset="https://picsum.photos/id/154/736/1400" media="(min-width:660px)">
-    <img src="https://picsum.photos/id/154/660/420" alt="" style="display: block;">
+    <img src="https://picsum.photos/id/154/660/420" alt="">
   </picture>
   <span slot="prefix">Duis aute irure dolor</span>
   <span slot="title">Duis aute irure dolor.<br>Excepteur sint occaecat.</span>
@@ -334,16 +335,14 @@ The following example illustrates a `auro-banner` custom element with the `marqu
 
 ## Marquee / solid
 
-The following example illustrates a `auro-banner` custom element with the `marquee solid` template style. With this configuration, `onDark` is implied.
-
-**NOTE:** The use of `style="display: block"` on the `img` element. This is a preference of the design, but not a style that can be controlled from the shadow DOM. This style must be applied by the user of the element in this context.
+The following example illustrates a `<auro-banner>` custom element with the `marquee solid` template style. With this configuration, `onDark` is implied.
 
 <div class="exampleWrapper">
   <auro-banner marquee solid>
     <picture slot="displayImage">
       <source srcset="https://picsum.photos/id/1015/1048/2000" media="(min-width: 1024px)">
       <source srcset="https://picsum.photos/id/1015/736/1400" media="(min-width:660px)">
-      <img src="https://picsum.photos/id/1015/660/660" alt="" style="display: block">
+      <img src="https://picsum.photos/id/1015/660/660" alt="">
     </picture>
     <auro-alaska official ondark style="width: 192px" slot="contentImage"></auro-alaska>
     <p slot="description">
@@ -368,7 +367,7 @@ The following example illustrates a `auro-banner` custom element with the `marqu
   <picture slot="displayImage">
     <source srcset="https://picsum.photos/id/1015/1048/2000" media="(min-width: 1024px)">
     <source srcset="https://picsum.photos/id/1015/736/1400" media="(min-width:660px)">
-    <img src="https://picsum.photos/id/1015/660/660" alt="" style="display: block">
+    <img src="https://picsum.photos/id/1015/660/660" alt="">
   </picture>
   <auro-alaska official ondark style="width: 192px" slot="contentImage"></auro-alaska>
   <p slot="description">
@@ -388,7 +387,7 @@ The following example illustrates a `auro-banner` custom element with the `marqu
 
 ## RoundedBorder
 
-The following example illustrates a `auro-banner` custom element with the `roundedBorder` variant style. With this configuration, no `displayImage` is used.  Instead only the `contentImage` is used and the rest of the offer is displayed in a row.
+The following example illustrates a `<auro-banner>` custom element with the `roundedBorder` variant style. With this configuration, no `displayImage` is used.  Instead only the `contentImage` is used and the rest of the offer is displayed in a row.
 
 <div class="exampleWrapper">
   <auro-banner roundedBorder alignLeft>
