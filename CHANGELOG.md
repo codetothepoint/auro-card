@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [1.3.0](https://github.com/AlaskaAirlines/auro-card/compare/v1.2.2...v1.3.0) (2021-05-18)
+
+
+### Features
+
+* **iconic:** add support for iconic variant ([dc8f330](https://github.com/AlaskaAirlines/auro-card/commit/dc8f3307fb37cda4911815f5c331202e99660fb6))
+
 ## [1.2.2](https://github.com/AlaskaAirlines/auro-card/compare/v1.2.1...v1.2.2) (2021-03-18)
 
 
