@@ -21,7 +21,7 @@ import "@alaskaairux/auro-header";
  * @attr {Boolean} billboard - to be used for billboard style configuration
  * @attr {Boolean} hero - to be used for hero style configuration
  * @attr {Boolean} iconic - to be used in as a hero on pages but with an icon and no displayImage on mobile
- * @attr {String} iconBG - to be used in conjuction with the iconic variant this specifies the background color of the icon.
+ * @attr {String} iconbg - to be used in conjunction with the iconic variant this specifies the background color of the icon
  * @attr {Boolean} marquee - to be used for marquee style configuration
  * @attr {Boolean} roundedBorder - to be used for roundedBorder style configuration
  * @attr {Boolean} solid - to be used when you want a solid color as opposed to a transparent background
@@ -68,7 +68,7 @@ class AuroBanner extends LitElement {
       roundedBorder: {
         type: Boolean
       },
-      iconBG: {
+      iconbg: {
         type: String
       }
     };
@@ -146,7 +146,7 @@ class AuroBanner extends LitElement {
       ${this.iconic
         ? html`
         <div class="iconContainer">
-          <div class="roundIconBg" style="background: ${ifDefined(!this.iconBG ? undefined : this.iconBG)}">
+          <div class="roundIconBg" style="background: ${ifDefined(!this.iconbg ? undefined : this.iconbg)}">
             <slot name="icon" class="icon"></slot>
           </div>
         </div>`

@@ -18,7 +18,7 @@ The auro-card-hero element provides users a flexible way to convey a summary of 
 | Property        | Attribute       | Type      | Description                                      |
 |-----------------|-----------------|-----------|--------------------------------------------------|
 | `hero`          | `hero`          | `Boolean` | to be used for hero style configuration          |
-| `iconBG`        | `iconBG`        | `String`  | to be used in conjuction with the iconic variant this specifies the background color of the icon. |
+| `iconbg`        | `iconbg`        | `String`  | to be used in conjunction with the iconic variant this specifies the background color of the icon |
 | `iconic`        | `iconic`        | `Boolean` | to be used in as a hero on pages but with an icon and no displayImage on mobile |
 | `marquee`       | `marquee`       | `Boolean` | to be used for marquee style configuration       |
 | `roundedBorder` | `roundedBorder` | `Boolean` | to be used for roundedBorder style configuration |
