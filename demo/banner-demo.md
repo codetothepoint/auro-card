@@ -279,6 +279,48 @@ The following example illustrates a `<auro-banner>` custom element with the `her
 ```
 </auro-accordion>
 
+
+## Iconic
+
+The following example illustrates a `<auro-banner>` custom element with the `iconic` template style.  The `iconic` template style hides the `displayImage` on small screen sizes and only shows the icon.  This examples also shows how to customize the icon background color using `iconbg`.
+<div class="exampleWrapper">
+  <auro-banner iconic iconbg="var(--auro-color-brand-neutral-400)">
+    <picture slot="displayImage">
+      <source srcset="https://picsum.photos/id/452/2800/2000.jpg" media="(min-width: 1054px)">
+      <source srcset="https://picsum.photos/id/452/1500/2000" media="(min-width:660px)">
+      <img src="https://picsum.photos/id/452/2800/2000.jpg" alt="">
+    </picture>
+    <span slot="icon">
+      <auro-icon category="social" name="instagram" customSize customColor style="color: white;width: 5rem"></auro-icon>
+    </span>
+    <span slot="title"><auro-header level="2" display="800" margin="both" size="none">Lorem ipsum title</auro-header><auro-header level="2" display="300" margin="top" size="none">You can add multiple auro-header's here</auro-header></span>
+    <p slot="description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus, quod aperiam a aut fuga qui eos reprehenderit facilis vero.
+    </p>
+  </auro-banner>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+<span slot="trigger">See code</span>
+
+```html
+ <auro-banner iconic iconbg="var(--auro-color-brand-neutral-400)">
+    <picture slot="displayImage">
+      <source srcset="https://picsum.photos/id/452/2800/2000.jpg" media="(min-width: 1054px)">
+      <source srcset="https://picsum.photos/id/452/1500/2000" media="(min-width:660px)">
+      <img src="https://picsum.photos/id/452/2800/2000.jpg" alt="">
+    </picture>
+    <span slot="icon">
+      <auro-icon category="social" name="instagram" customSize customColor style="color: white;width: 5rem"></auro-icon>
+    </span>
+    <span slot="title"><auro-header level="2" display="800" margin="both" size="none">Lorem ipsum title</auro-header><auro-header level="2" display="300" margin="top" size="none">You can add multiple auro-header's here</auro-header></span>
+    <p slot="description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus, quod aperiam a aut fuga qui eos reprehenderit facilis vero.
+    </p>
+  </auro-banner>
+```
+</auro-accordion>
+
 ## Marquee
 
 The following example illustrates a `<auro-banner>` custom element with the `marquee` template style. This template configuration also supports the `slim` and `onDark` attributes.

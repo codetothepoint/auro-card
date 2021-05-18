@@ -7,6 +7,7 @@
 // ---------------------------------------------------------------------
 
 import { LitElement, html, css } from "lit-element";
+import { ifDefined } from 'lit-html/directives/if-defined.js';
 
 // Import touch detection lib
 import "focus-visible/dist/focus-visible.min.js";
@@ -19,6 +20,8 @@ import "@alaskaairux/auro-header";
  * The auro-card-hero element provides users a flexible way to convey a summary of information in various large formats.
  * @attr {Boolean} billboard - to be used for billboard style configuration
  * @attr {Boolean} hero - to be used for hero style configuration
+ * @attr {Boolean} iconic - to be used in as a hero on pages but with an icon and no displayImage on mobile
+ * @attr {String} iconBG - to be used in conjuction with the iconic variant this specifies the background color of the icon.
  * @attr {Boolean} marquee - to be used for marquee style configuration
  * @attr {Boolean} roundedBorder - to be used for roundedBorder style configuration
  * @attr {Boolean} solid - to be used when you want a solid color as opposed to a transparent background
@@ -56,11 +59,17 @@ class AuroBanner extends LitElement {
       hero: {
         type: Boolean
       },
+      iconic: {
+        type: Boolean
+      },
       marquee: {
         type: Boolean
       },
       roundedBorder: {
         type: Boolean
+      },
+      iconBG: {
+        type: String
       }
     };
   }
@@ -73,7 +82,6 @@ class AuroBanner extends LitElement {
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
-
     return html`
       <div class="bannerWrapper">
       ${!this.roundedBorder
@@ -81,8 +89,12 @@ class AuroBanner extends LitElement {
         <slot name="displayImage" class="displayImage"></slot>`
         : html``
       }
-
         <div class="bodyWrapper">
+          ${this.iconic
+           ? html`
+             <slot name="title"></slot>`
+            : html``
+          }
           ${this.hero
             ? html`
               <auro-header level="2" display="300" margin="top" size="none" class="title prefix">
@@ -103,7 +115,7 @@ class AuroBanner extends LitElement {
             : html``
           }
 
-          ${!this.roundedBorder && !this.marquee && !this.hero
+          ${!this.marquee && !this.hero && !this.iconic && !this.roundedBorder
             ? html`
               <auro-header level="2" display="600" margin="both" size="none" class="title">
                 <slot name="title"></slot>
@@ -112,7 +124,6 @@ class AuroBanner extends LitElement {
           }
 
           <slot name="contentImage" class="imageWrapper"></slot>
-
 
           <div class="contentWrapper">
           ${this.roundedBorder
@@ -132,6 +143,15 @@ class AuroBanner extends LitElement {
           </div>
         </div>
       </div>
+      ${this.iconic
+        ? html`
+        <div class="iconContainer">
+          <div class="roundIconBg" style="background: ${ifDefined(!this.iconBG ? undefined : this.iconBG)}">
+            <slot name="icon" class="icon"></slot>
+          </div>
+        </div>`
+        : html``
+      }
     `;
   }
 }

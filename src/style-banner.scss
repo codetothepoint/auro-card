@@ -101,7 +101,6 @@
   .title {
     color: var(--auro-color-base-white);
   }
-
 }
 
 // =-=-=-=-= billboard -=-=-=-=-=-=
@@ -169,6 +168,73 @@
   }
 }
 
+// =-=-=-=-= iconic -=-=-=-=-=-=
+
+:host([iconic]) {
+  @extend %auro-banner;
+
+  $iconBgSize: 7.5rem;
+
+  .iconAbsolute {
+    position: absolute;
+  }
+
+  .iconContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -$iconBgSize/6;
+  }
+
+  .roundIconBg {
+    width: $iconBgSize;
+    height: $iconBgSize;
+    background: var(--auro-color-brand-neutral-400);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+  }
+
+  .displayImage {
+    display: none;
+
+    @include auro_breakpoint--sm {
+      display: block;
+      max-width: 50%;
+      right: 0;
+      position: absolute;
+      overflow: hidden;
+    }
+
+    &::slotted(img) {
+      display: block;
+    }
+  }
+  .description {
+    @include auro_breakpoint--sm {
+      padding-bottom: var(--auro-size-lg);
+      padding-right: var(--auro-size-lg);
+    }
+  }
+
+  .contentWrapper {
+    margin: 0 auto var(--auro-size-xxl);
+    padding-bottom: var(--auro-size-xxl);
+  }
+  
+  .bodyWrapper {
+    text-align: left;
+    padding: var(--auro-size-xl) var(--auro-size-xl) var(--auro-size-xl) 0;
+    @include auro_breakpoint--sm {
+      width: 50%;
+      padding-left: 0;
+    }
+  }
+}
+
 // =-=-=-=-= marquee -=-=-=-=-=-=
 
 :host([marquee]) {
@@ -224,7 +290,13 @@
   }
 
   .bodyWrapper {
+    align-items: center;
     padding: var(--auro-size-md);
+
+    @include auro_breakpoint--sm {
+      flex-direction: row;
+    }
+
     @include auro_breakpoint--md {
       padding: var(--auro-size-lg);
     }
@@ -232,15 +304,9 @@
     @include auro_breakpoint--lg {
       padding: var(--auro-size-xl);
     }
-    align-items: center;
-
-    @include auro_breakpoint--sm {
-      flex-direction: row;
-    }
   }
 
   .imageWrapper {
-
     @include auro_breakpoint--sm {
       flex-basis: 30%;
       display: flex;
@@ -253,7 +319,6 @@
 // =-=-=-=-= right -=-=-=-=-=-=
 
 :host([alignRight]) {
-
   .bodyWrapper {
     align-items: flex-end;
     text-align: right;
@@ -263,7 +328,6 @@
 // =-=-=-=-= left -=-=-=-=-=-=
 
 :host([alignLeft]) {
-
   .bodyWrapper {
     align-items: flex-start;
     text-align: left;
