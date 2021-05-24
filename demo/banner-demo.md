@@ -1,8 +1,8 @@
 # Banner
 
-The `<auro-banner>` element provides users a flexible way to convey a summary of information. The primary elements of a banner include an image, and details.
+The `<auro-banner>` element provides users a flexible way to convey a summary of information. The primary elements of a banner include an image and details.
 
-The details are broken down into `prefix`, `title`, `description`, `action`, and `disclaimer`.
+The details are broken down into `left`, `right`, and `overlay`.
 
 ## Component use cases
 
@@ -21,30 +21,12 @@ The default `<auro-banner>` element features configuration options when using us
 
 Notice the use of the [auro-hyperlink](https://auro.alaskaair.com/components/auro/hyperlink) element and the `action` slot in the following examples. All the [properties](https://auro.alaskaair.com/components/auro/hyperlink/api) of the Hyperlink element are directly applicable.
 
-## Billboard
+## PrefersRight
 
-The `<auro-banner>` element with the `billboard` property features a single configuration using the `displayImage`, `contentImage`, `description`, `action` and `disclaimer` slots for structured content placement.
-
-### Background image slot
-
-The background image slot is configured to work with the HTML [picture](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture) element.
-
-```html
-<picture slot="displayImage">
-  <source srcset="https://picsum.photos/id/430/1024/600" media="(min-width: 736px)">
-  <source srcset="https://picsum.photos/id/430/736/1400" media="(min-width: 375px)">
-  <source srcset="https://picsum.photos/id/430/320/1200" media="(min-width: 320px)">
-  <img src="https://picsum.photos/id/430/225/550" alt="" />
-</picture>
-```
-<br>
-
-This allows the editor the upmost in image flexibility for cropped images placed at different breakpoints. A slotted `<img>` element is the default image shown when less than the first defined breakpoint.
-
-By default `<img>` elements are `inline` elements and will add a few pixels of space below the image. To counter this, either set `display: block` on the `<img>` element, or add this [WCSS pre-defined selector](https://alaskaairlines.github.io/WebCoreStyleSheets/#core-css-#{$sym}#{$prefix}picture#{$scope}) to your project.<br><br>
+The `<auro-banner>` element with the `prefersRight` property features a single configuration using the `left` and `right` slots for structured content placement where the right side of the banner will stack on top of the left side. Note that if `prefersRight` and `prefersLeft` is not set, it will automatically apply `prefersRight`.
 
 <div class="exampleWrapper">
-  <auro-banner>
+  <auro-banner prefersRight>
     <picture slot="right">
       <source srcset="https://picsum.photos/id/430/1124/800" media="(min-width: 1024px)">
       <source srcset="https://picsum.photos/id/430/1124/1000" media="(min-width: 768px)">
@@ -54,6 +36,37 @@ By default `<img>` elements are `inline` elements and will add a few pixels of s
       <img src="https://picsum.photos/id/430/225/550" alt="" />
     </picture>
     <div slot="left">
+      <img
+        src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+        alt="Random insert"/>
+      <p>
+        We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
+      </p>
+      <auro-hyperlink
+        cta
+        secondary
+        href="/"
+        target="_blank">
+        More info
+      </auro-hyperlink>
+    </div>
+  </auro-banner>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+<span slot="trigger">See code</span>
+
+```html
+<auro-banner prefersRight>
+  <picture slot="right">
+    <source srcset="https://picsum.photos/id/430/1124/800" media="(min-width: 1024px)">
+    <source srcset="https://picsum.photos/id/430/1124/1000" media="(min-width: 768px)">
+    <source srcset="https://picsum.photos/id/430/736/750" media="(min-width: 736px)">
+    <source srcset="https://picsum.photos/id/430/736/1400" media="(min-width: 375px)">
+    <source srcset="https://picsum.photos/id/430/320/700" media="(min-width: 320px)">
+    <img src="https://picsum.photos/id/430/225/550" alt="" />
+  </picture>
+  <div slot="left">
     <img
       src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
       alt="Random insert"/>
@@ -67,6 +80,102 @@ By default `<img>` elements are `inline` elements and will add a few pixels of s
       target="_blank">
       More info
     </auro-hyperlink>
+  </div>
+</auro-banner>
+```
+</auro-accordion>
+
+## PrefersLeft
+
+As opposed to `prefersRight`, the `<auro-banner>` element with the `prefersLeft` property will have the left side of the banner stack above the right side in smaller sizes.
+
+<auro-banner prefersLeft>
+  <picture slot="left">
+    <source srcset="https://picsum.photos/id/430/1124/800" media="(min-width: 1024px)">
+    <source srcset="https://picsum.photos/id/430/1124/1000" media="(min-width: 768px)">
+    <source srcset="https://picsum.photos/id/430/736/750" media="(min-width: 736px)">
+    <source srcset="https://picsum.photos/id/430/736/1400" media="(min-width: 375px)">
+    <source srcset="https://picsum.photos/id/430/320/700" media="(min-width: 320px)">
+    <img src="https://picsum.photos/id/430/225/550" alt="" />
+  </picture>
+  <div slot="right">
+    <img
+      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      alt="Random insert"/>
+    <p>
+      We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
+    </p>
+    <auro-hyperlink
+      cta
+      secondary
+      href="/"
+      target="_blank">
+      More info
+    </auro-hyperlink>
+  </div>
+</auro-banner>
+
+<auro-accordion lowProfile justifyRight>
+<span slot="trigger">See code</span>
+
+```html
+<auro-banner prefersLeft>
+  <picture slot="left">
+    <source srcset="https://picsum.photos/id/430/1124/800" media="(min-width: 1024px)">
+    <source srcset="https://picsum.photos/id/430/1124/1000" media="(min-width: 768px)">
+    <source srcset="https://picsum.photos/id/430/736/750" media="(min-width: 736px)">
+    <source srcset="https://picsum.photos/id/430/736/1400" media="(min-width: 375px)">
+    <source srcset="https://picsum.photos/id/430/320/700" media="(min-width: 320px)">
+    <img src="https://picsum.photos/id/430/225/550" alt="" />
+  </picture>
+  <div slot="right">
+    <img
+      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      alt="Random insert"/>
+    <p>
+      We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
+    </p>
+    <auro-hyperlink
+      cta
+      secondary
+      href="/"
+      target="_blank">
+      More info
+    </auro-hyperlink>
+  </div>
+</auro-banner>
+```
+</auro-accordion>
+
+
+
+## Ratio
+
+The following example illustrates how to use the `ratio` property to control the width of the left and right side of the banner. The structure is `{leftRatio}:{rightRatio}` where the left and right ratios are the comparison of sizes between the two parts of the banner.
+
+<div class="exampleWrapper">
+  <auro-banner ratio="2:3">
+    <picture slot="right">
+      <source srcset="https://picsum.photos/id/42/1124/800" media="(min-width: 1024px)">
+      <source srcset="https://picsum.photos/id/42/1124/1000" media="(min-width: 768px)">
+      <source srcset="https://picsum.photos/id/42/736/750" media="(min-width: 736px)">
+      <source srcset="https://picsum.photos/id/42/736/1400" media="(min-width: 375px)">
+      <source srcset="https://picsum.photos/id/42/320/700" media="(min-width: 320px)">
+      <img src="https://picsum.photos/id/42/225/550" alt="" />
+    </picture>
+    <div slot="left">
+      <span>Beverages and cocktails</span>
+      <p>
+        <span style="max-width: 360px;display: block;">Enjoy soft drinks, fresh Starbucks® coffee – including lattes and cappuccinos, and Teavana® tea while you relax. Or try our famous Bloody Mary.</span>
+      </p>
+      <auro-hyperlink
+        cta
+        secondary
+        ondark
+        href="/"
+        target="_blank">
+        More info
+      </auro-hyperlink>
     </div>
   </auro-banner>
 </div>
@@ -75,132 +184,8 @@ By default `<img>` elements are `inline` elements and will add a few pixels of s
 <span slot="trigger">See code</span>
 
 ```html
-<auro-banner billboard>
-  <picture slot="displayImage">
-    <source srcset="https://picsum.photos/id/430/1124/800" media="(min-width: 1024px)">
-    <source srcset="https://picsum.photos/id/430/1124/1000" media="(min-width: 768px)">
-    <source srcset="https://picsum.photos/id/430/736/750" media="(min-width: 736px)">
-    <source srcset="https://picsum.photos/id/430/736/1400" media="(min-width: 375px)">
-    <source srcset="https://picsum.photos/id/430/320/700" media="(min-width: 320px)">
-    <img src="https://picsum.photos/id/430/225/550" alt="" />
-  </picture>
-  <img
-    slot="contentImage"
-    src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
-    alt="Random insert"/>
-  <p slot="description">
-    We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
-  </p>
-  <auro-hyperlink
-    cta
-    secondary
-    href="/"
-    slot="action"
-    target="_blank">
-    More info
-  </auro-hyperlink>
-</auro-banner>
-```
-</auro-accordion>
-
-## Billboard / slim / alignRight / onDark
-
-The following example illustrates a series of additional API options available to the `<auro-banner>` element. In this example, this shows how a user can augment the `billboard` theme of the `<auro-banner>`.
-
-For the call-to-action button, see in the example code that it is required to set the `onDark` attribute on the `<auro-hyperlink>` element itself. This is **not** controlled by the `<auro-banner>` element.
-
-<div class="exampleWrapper">
-  <auro-banner billboard slim alignRight ondark>
-    <picture slot="displayImage">
-      <source srcset="https://picsum.photos/id/324/1124/800" media="(min-width: 1024px)">
-      <source srcset="https://picsum.photos/id/324/1124/1000" media="(min-width: 768px)">
-      <source srcset="https://picsum.photos/id/324/736/750" media="(min-width: 736px)">
-      <source srcset="https://picsum.photos/id/324/736/1400" media="(min-width: 375px)">
-      <source srcset="https://picsum.photos/id/324/320/700" media="(min-width: 320px)">
-      <img src="https://picsum.photos/id/324/225/550" alt="" />
-    </picture>
-    <auro-alaska official ondark style="width: 192px" slot="contentImage"></auro-alaska>
-    <p slot="description">
-      <span style="max-width:320px; margin-left:auto; display:block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-    </p>
-    <auro-hyperlink
-      cta
-      ondark
-      href="/"
-      slot="action"
-      target="_blank">
-      Learn more
-    </auro-hyperlink>
-  </auro-banner>
-</div>
-
-<auro-accordion lowProfile justifyRight>
-<span slot="trigger">See code</span>
-
-```html
-<auro-banner billboard slim alignRight ondark>
-  <picture slot="displayImage">
-    <source srcset="https://picsum.photos/id/324/1124/800" media="(min-width: 1024px)">
-    <source srcset="https://picsum.photos/id/324/1124/1000" media="(min-width: 768px)">
-    <source srcset="https://picsum.photos/id/324/736/750" media="(min-width: 736px)">
-    <source srcset="https://picsum.photos/id/324/736/1400" media="(min-width: 375px)">
-    <source srcset="https://picsum.photos/id/324/320/700" media="(min-width: 320px)">
-    <img src="https://picsum.photos/id/324/225/550" alt="" />
-  </picture>
-  <auro-alaska official ondark style="width: 192px" slot="contentImage"></auro-alaska>
-  <p slot="description">
-    <span style="max-width:320px; margin-left:auto; display:block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-  </p>
-  <auro-hyperlink
-    cta
-    ondark
-    href="/"
-    slot="action"
-    target="_blank">
-    Learn more
-  </auro-hyperlink>
-</auro-banner>
-```
-</auro-accordion>
-
-
-
-## Billboard / slim / alignLeft / onDark
-
-The following example illustrates an option to left align the text `alignLeft` along with `slim` to reduce the padding and `ondark` to change the text to white.
-
-<div class="exampleWrapper">
-  <auro-banner billboard slim alignLeft onDark>
-    <picture slot="displayImage">
-      <source srcset="https://picsum.photos/id/42/1124/800" media="(min-width: 1024px)">
-      <source srcset="https://picsum.photos/id/42/1124/1000" media="(min-width: 768px)">
-      <source srcset="https://picsum.photos/id/42/736/750" media="(min-width: 736px)">
-      <source srcset="https://picsum.photos/id/42/736/1400" media="(min-width: 375px)">
-      <source srcset="https://picsum.photos/id/42/320/700" media="(min-width: 320px)">
-      <img src="https://picsum.photos/id/42/225/550" alt="" />
-    </picture>
-    <span slot="title">Beverages and cocktails</span>
-    <p slot="description">
-      <span style="max-width: 360px;display: block;">Enjoy soft drinks, fresh Starbucks® coffee – including lattes and cappuccinos, and Teavana® tea while you relax. Or try our famous Bloody Mary.</span>
-    </p>
-    <auro-hyperlink
-      cta
-      secondary
-      ondark
-      href="/"
-      slot="action"
-      target="_blank">
-      More info
-    </auro-hyperlink>
-  </auro-banner>
-</div>
-
-<auro-accordion lowProfile justifyRight>
-<span slot="trigger">See code</span>
-
-```html
-<auro-banner billboard slim alignLeft onDark>
-  <picture slot="displayImage">
+<auro-banner ratio="2:3">
+  <picture slot="right">
     <source srcset="https://picsum.photos/id/42/1124/800" media="(min-width: 1024px)">
     <source srcset="https://picsum.photos/id/42/1124/1000" media="(min-width: 768px)">
     <source srcset="https://picsum.photos/id/42/736/750" media="(min-width: 736px)">
@@ -208,24 +193,25 @@ The following example illustrates an option to left align the text `alignLeft` a
     <source srcset="https://picsum.photos/id/42/320/700" media="(min-width: 320px)">
     <img src="https://picsum.photos/id/42/225/550" alt="" />
   </picture>
-  <span slot="title">Beverages and cocktails</span>
-  <p slot="description">
-    <span style="max-width: 360px;display: block;">Enjoy soft drinks, fresh Starbucks® coffee – including lattes and cappuccinos, and Teavana® tea while you relax. Or try our famous Bloody Mary.</span>
-  </p>
-  <auro-hyperlink
-    cta
-    secondary
-    ondark
-    href="/"
-    slot="action"
-    target="_blank">
-    More info
-  </auro-hyperlink>
+  <div slot="left">
+    <span>Beverages and cocktails</span>
+    <p>
+      <span style="max-width: 360px;display: block;">Enjoy soft drinks, fresh Starbucks® coffee – including lattes and cappuccinos, and Teavana® tea while you relax. Or try our famous Bloody Mary.</span>
+    </p>
+    <auro-hyperlink
+      cta
+      secondary
+      ondark
+      href="/"
+      target="_blank">
+      More info
+    </auro-hyperlink>
+  </div>
 </auro-banner>
 ```
 </auro-accordion>
 
-## Hero
+## Overlay
 
 The following example illustrates a `<auro-banner>` custom element with the `hero` template style. This example also illustrates the use of the `prefix` slot.
 
@@ -280,7 +266,7 @@ The following example illustrates a `<auro-banner>` custom element with the `her
 </auro-accordion>
 
 
-## Iconic
+## Ommiting a side
 
 The following example illustrates a `<auro-banner>` custom element with the `iconic` template style.  The `iconic` template style hides the `displayImage` on small screen sizes and only shows the icon.  This examples also shows how to customize the icon background color using `iconbg`.
 
