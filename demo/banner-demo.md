@@ -44,8 +44,8 @@ This allows the editor the upmost in image flexibility for cropped images placed
 By default `<img>` elements are `inline` elements and will add a few pixels of space below the image. To counter this, either set `display: block` on the `<img>` element, or add this [WCSS pre-defined selector](https://alaskaairlines.github.io/WebCoreStyleSheets/#core-css-#{$sym}#{$prefix}picture#{$scope}) to your project.<br><br>
 
 <div class="exampleWrapper">
-  <auro-banner billboard>
-    <picture slot="displayImage">
+  <auro-banner>
+    <picture slot="right">
       <source srcset="https://picsum.photos/id/430/1124/800" media="(min-width: 1024px)">
       <source srcset="https://picsum.photos/id/430/1124/1000" media="(min-width: 768px)">
       <source srcset="https://picsum.photos/id/430/736/750" media="(min-width: 736px)">
@@ -53,21 +53,21 @@ By default `<img>` elements are `inline` elements and will add a few pixels of s
       <source srcset="https://picsum.photos/id/430/320/700" media="(min-width: 320px)">
       <img src="https://picsum.photos/id/430/225/550" alt="" />
     </picture>
+    <div slot="left">
     <img
-      slot="contentImage"
       src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
       alt="Random insert"/>
-    <p slot="description">
+    <p>
       We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
     </p>
     <auro-hyperlink
       cta
       secondary
       href="/"
-      slot="action"
       target="_blank">
       More info
     </auro-hyperlink>
+    </div>
   </auro-banner>
 </div>
 
