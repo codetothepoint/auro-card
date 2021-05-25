@@ -30,3 +30,14 @@
   align-items: center;
   align-content: flex-start;
 }
+
+// When at the smaller breakpoints
+@media screen and (max-width: $auro-breakpoint-md) {
+  :host.prefersLeft {
+    flex-direction: column;
+  }
+  
+  :host.prefersRight {
+    flex-direction: column-reverse;
+  }
+}
