@@ -19,23 +19,25 @@ import "@alaskaairux/auro-header";
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
  * The auro-card-hero element provides users a flexible way to convey a summary of information in various large formats.
- * @attr {Boolean} prefersLeft - 
- * @attr {Boolean} prefersRight - 
- * @attr {String} ratio - 
- * @slot left - 
- * @slot right - 
- * @slot overlay - 
+ * @attr {Boolean} prefersLeft - The left column will move to the top at the lower breakpoint
+ * @attr {Boolean} prefersRight - The right column will move to the top at the lower breakpoint.  If both or neither are set, `prefersRight` is the default.
+ * @attr {String} ratio - in the format 'X:Y' where 'X' and 'Y' are two integers.
+ * @slot left - Content in the left column.
+ * @slot right - Content in the right column.
+ * @slot overlay - Content in the front overlay.
  */
 class AuroBanner extends LitElement {
 
   constructor() {
     super();
     this.ratio = '1:1';
+    this.prefersLeft = false;
+    this.prefersRight = false;
   }
 
   static get properties() {
     return {
-      perfersLeft: {
+      prefersLeft: {
         type: Boolean
       },
       prefersRight: {
@@ -55,21 +57,25 @@ class AuroBanner extends LitElement {
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
-    const leftRatio, rightRatio = this.ratio.split(':');
-
-    const classes = {
-      'prefersRight': this.prefersRight,
+    const _isPreferenceSet = this.prefersLeft || this.prefersRight,
+    [
+      leftRatio,
+      rightRatio
+    ] = this.ratio.split(':'),
+    classes = {
+      'bannerWrapper': true,
+      'prefersRight': this.prefersRight || !_isPreferenceSet,
       'prefersLeft': this.prefersLeft && !this.prefersRight,
-    };
-    const leftSlotStyles = {
+    },
+    leftSlotStyles = {
       'flex-grow': leftRatio,
-    };
-    const rightSlotStyles = {
+    },
+    rightSlotStyles = {
       'flex-grow': rightRatio,
     };
 
     return html`
-    <div class="bannerWrapper" class="${classMap(classes)}">
+    <div class="${classMap(classes)}">
       <slot name="left" style=${styleMap(leftSlotStyles)}></slot>
       <slot name="right" style=${styleMap(rightSlotStyles)}></slot>
       <slot name="overlay"></slot>
