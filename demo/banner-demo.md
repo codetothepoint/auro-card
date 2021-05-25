@@ -213,28 +213,32 @@ The following example illustrates how to use the `ratio` property to control the
 
 ## Overlay
 
-The following example illustrates a `<auro-banner>` custom element with the `hero` template style. This example also illustrates the use of the `prefix` slot.
+The following example illustrates a `<auro-banner>` custom element using the `overlay` slot. This one fixes an icon to the bottom of the banner. Notice how we have to put in custom styling to get it to disappear at smaller screen sizes.
 
 <div class="exampleWrapper">
-  <auro-banner hero>
-    <picture slot="displayImage">
+  <auro-banner>
+    <picture slot="right">
       <source srcset="https://picsum.photos/id/369/2048/2000" media="(min-width: 1024px)">
       <source srcset="https://picsum.photos/id/369/736/1400" media="(min-width:660px)">
       <img src="https://picsum.photos/id/369/660/420" alt="">
     </picture>
-    <span slot="prefix">Duis aute irure dolor</span>
-    <span slot="title">Duis aute irure dolor.<br>Excepteur sint occaecat.</span>
-    <p slot="description">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    <div slot="left">
+      <span>Duis aute irure dolor</span>
+      <span>Duis aute irure dolor.<br>Excepteur sint occaecat.</span>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <auro-hyperlink
+        cta
+        secondary
+        href="/"
+        target="_blank">
+        More info
+      </auro-hyperlink>
+    </div>
+    <p slot="overlay" style="width: 5rem; background: lightgray; border-radius: 50%;">
+      <auro-icon category="social" name="instagram" customSize customColor style="color: var(--auro-color-base-white); width: 5rem"></auro-icon>
     </p>
-    <auro-hyperlink
-      cta
-      secondary
-      href="/"
-      slot="action"
-      target="_blank">
-      More info
-    </auro-hyperlink>
   </auro-banner>
 </div>
 
@@ -242,25 +246,29 @@ The following example illustrates a `<auro-banner>` custom element with the `her
 <span slot="trigger">See code</span>
 
 ```html
-<auro-banner hero>
-  <picture slot="displayImage">
+<auro-banner>
+  <picture slot="right">
     <source srcset="https://picsum.photos/id/369/2048/2000" media="(min-width: 1024px)">
     <source srcset="https://picsum.photos/id/369/736/1400" media="(min-width:660px)">
     <img src="https://picsum.photos/id/369/660/420" alt="">
   </picture>
-  <span slot="prefix">Duis aute irure dolor</span>
-  <span slot="title">Duis aute irure dolor.<br>Excepteur sint occaecat.</span>
-  <p slot="description">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  <div slot="left">
+    <span>Duis aute irure dolor</span>
+    <span>Duis aute irure dolor.<br>Excepteur sint occaecat.</span>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+    <auro-hyperlink
+      cta
+      secondary
+      href="/"
+      target="_blank">
+      More info
+    </auro-hyperlink>
+  </div>
+  <p slot="overlay" style="width: 5rem; background: lightgray; border-radius: 50%;">
+    <auro-icon category="social" name="instagram" customSize customColor style="color: var(--auro-color-base-white); width: 5rem"></auro-icon>
   </p>
-  <auro-hyperlink
-    cta
-    secondary
-    href="/"
-    slot="action"
-    target="_blank">
-    More info
-  </auro-hyperlink>
 </auro-banner>
 ```
 </auro-accordion>
@@ -268,25 +276,19 @@ The following example illustrates a `<auro-banner>` custom element with the `her
 
 ## Ommiting a side
 
-The following example illustrates a `<auro-banner>` custom element with the `iconic` template style.  The `iconic` template style hides the `displayImage` on small screen sizes and only shows the icon.  This examples also shows how to customize the icon background color using `iconbg`.
+The following example illustrates a `<auro-banner>` custom element with one of the sides ommitted, if only the `left` or the `right` slot is filled, then it will take up the whole space.
 
 <div class="exampleWrapper">
-  <auro-banner iconic iconbg="var(--auro-color-brand-neutral-400)">
-    <picture slot="displayImage">
-      <source srcset="https://picsum.photos/id/452/2800/2000.jpg" media="(min-width: 1054px)">
-      <source srcset="https://picsum.photos/id/452/1500/2000" media="(min-width:660px)">
-      <img src="https://picsum.photos/id/452/2800/2000.jpg" alt="">
-    </picture>
-    <span slot="icon">
-      <auro-icon category="social" name="instagram" customSize customColor style="color: var(--auro-color-base-white); width: 5rem"></auro-icon>
-    </span>
-    <span slot="title">
-      <auro-header level="2" display="800" margin="both" size="none">Lorem ipsum title</auro-header>
-      <auro-header level="3" display="300" margin="top" size="none">You can add multiple auro-header's here</auro-header>
-    </span>
-    <p slot="description">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus, quod aperiam a aut fuga qui eos reprehenderit facilis vero.
-    </p>
+  <auro-banner>
+    <div slot="right">
+      <span>
+        <auro-header level="2" display="800" margin="both" size="none">Lorem ipsum title</auro-header>
+        <auro-header level="3" display="300" margin="top" size="none">You can add multiple auro-header's here</auro-header>
+      </span>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus, quod aperiam a aut fuga qui eos reprehenderit facilis vero.
+      </p>
+    </div>
   </auro-banner>
 </div>
 
@@ -294,27 +296,21 @@ The following example illustrates a `<auro-banner>` custom element with the `ico
 <span slot="trigger">See code</span>
 
 ```html
-<auro-banner iconic iconbg="var(--auro-color-brand-neutral-400)">
-  <picture slot="displayImage">
-    <source srcset="https://picsum.photos/id/452/2800/2000.jpg" media="(min-width: 1054px)">
-    <source srcset="https://picsum.photos/id/452/1500/2000" media="(min-width:660px)">
-    <img src="https://picsum.photos/id/452/2800/2000.jpg" alt="">
-  </picture>
-  <span slot="icon">
-    <auro-icon category="social" name="instagram" customSize customColor style="color: var(--auro-color-base-white); width: 5rem"></auro-icon>
-  </span>
-  <span slot="title">
-    <auro-header level="2" display="800" margin="both" size="none">Lorem ipsum title</auro-header>
-    <auro-header level="3" display="300" margin="top" size="none">You can add multiple auro-header's here</auro-header>
-  </span>
-  <p slot="description">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus, quod aperiam a aut fuga qui eos reprehenderit facilis vero.
-  </p>
+<auro-banner>
+  <div slot="right">
+    <span>
+      <auro-header level="2" display="800" margin="both" size="none">Lorem ipsum title</auro-header>
+      <auro-header level="3" display="300" margin="top" size="none">You can add multiple auro-header's here</auro-header>
+    </span>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus, quod aperiam a aut fuga qui eos reprehenderit facilis vero.
+    </p>
+  </div>
 </auro-banner>
 ```
 </auro-accordion>
 
-## Marquee
+## Using the auro-banner with the auro-background
 
 The following example illustrates a `<auro-banner>` custom element with the `marquee` template style. This template configuration also supports the `slim` and `onDark` attributes.
 
