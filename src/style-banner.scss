@@ -21,7 +21,7 @@
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
 // never define layout that would cause effect on element outside the scope of this component
 
-:host {
+.bannerWrapper {
   color: var(--auro-color-text-primary-on-light);
   display: flex;
   flex-direction: row;
@@ -33,11 +33,11 @@
 
 // When at the smaller breakpoints
 @media screen and (max-width: $auro-breakpoint-md) {
-  :host.prefersLeft {
+  .bannerWrapper.prefersLeft {
     flex-direction: column;
   }
   
-  :host.prefersRight {
+  .bannerWrapper.prefersRight {
     flex-direction: column-reverse;
   }
 }
