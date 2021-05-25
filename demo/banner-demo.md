@@ -236,7 +236,7 @@ The following example illustrates a `<auro-banner>` custom element using the `ov
         More info
       </auro-hyperlink>
     </div>
-    <p slot="overlay" style="width: 5rem; background: lightgray; border-radius: 50%;">
+    <p slot="overlay" style="width: 5rem; background: lightgray; border-radius: 50%; position: absolute">
       <auro-icon category="social" name="instagram" customSize customColor style="color: var(--auro-color-base-white); width: 5rem"></auro-icon>
     </p>
   </auro-banner>
@@ -422,23 +422,27 @@ The following example illustrates a `<auro-banner>` custom element with the `rou
 
 <div class="exampleWrapper">
   <auro-banner roundedBorder alignLeft>
-  <img src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="" slot="contentImage" />
-    <span slot="prefix">Prefix - Limited Time</span>
-    <span slot="title">Title - Irure dolor.</span>
-    <p slot="description">
-      Description - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    </p>
-    <div slot="disclaimer">
-      * Disclaimer - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    <div slot="left">
+      <img src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="" slot="contentImage" />
     </div>
-    <auro-hyperlink
-      cta
-      secondary
-      href="/"
-      slot="action"
-      target="_blank">
-      More info
-    </auro-hyperlink>
+    <div slot="right">
+      <span slot="prefix">Prefix - Limited Time</span>
+      <span slot="title">Title - Irure dolor.</span>
+      <p slot="description">
+        Description - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+      <div slot="disclaimer">
+        * Disclaimer - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </div>
+      <auro-hyperlink
+        cta
+        secondary
+        href="/"
+        slot="action"
+        target="_blank">
+        More info
+      </auro-hyperlink>
+    </div>
   </auro-banner>
 </div>
 

@@ -23,21 +23,40 @@
 
 .bannerWrapper {
   color: var(--auro-color-text-primary-on-light);
+  position: relative;
+
+  // Flex rules
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   align-content: flex-start;
+
+  .overlay {
+    position: absolute;
+  }
 }
 
 // When at the smaller breakpoints
 @media screen and (max-width: $auro-breakpoint-md) {
-  .bannerWrapper.prefersLeft {
-    flex-direction: column;
+  .bannerWrapper {
+    &.prefersLeft {
+      flex-direction: column;
+    }
+    
+    &.prefersRight {
+      flex-direction: column-reverse;
+    }
+    .item {
+      width: 100% !important;
+    }
   }
-  
-  .bannerWrapper.prefersRight {
-    flex-direction: column-reverse;
+}
+
+:host([roundedBorder]) {
+  .bannerWrapper {
+    border: 1px solid var(--auro-color-border-primary-on-light);
+    border-radius: 5px;
   }
 }

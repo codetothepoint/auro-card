@@ -57,28 +57,36 @@ class AuroBanner extends LitElement {
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
-    const _isPreferenceSet = this.prefersLeft || this.prefersRight,
-    [
-      leftRatio,
-      rightRatio
-    ] = this.ratio.split(':'),
-    classes = {
+    const leftRatio = Number.parseInt(this.ratio.split(':')[0]);
+    const rightRatio = Number.parseInt(this.ratio.split(':')[1]);
+
+    const leftPercent = leftRatio * ( 100 / (leftRatio + rightRatio) );
+    const rightPercent = rightRatio * ( 100 / (leftRatio + rightRatio) );
+
+    const _isPreferenceSet = this.prefersLeft || this.prefersRight;
+    const classes = {
       'bannerWrapper': true,
       'prefersRight': this.prefersRight || !_isPreferenceSet,
       'prefersLeft': this.prefersLeft && !this.prefersRight,
     },
     leftSlotStyles = {
-      'flex-grow': leftRatio,
+      'width': `${leftPercent}%`,
     },
     rightSlotStyles = {
-      'flex-grow': rightRatio,
+      'width': `${rightPercent}%`,
     };
 
     return html`
     <div class="${classMap(classes)}">
-      <slot name="left" style=${styleMap(leftSlotStyles)}></slot>
-      <slot name="right" style=${styleMap(rightSlotStyles)}></slot>
-      <slot name="overlay"></slot>
+      <div class="item" style=${styleMap(leftSlotStyles)}>
+        <slot name="left"></slot>
+      </div>
+      <div class="item" style=${styleMap(rightSlotStyles)}>
+        <slot name="right"></slot>
+      </div>
+      <div class="overlay">
+        <slot name="overlay"></slot>
+      </div>
     </div>
     `;
   }
