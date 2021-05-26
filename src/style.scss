@@ -27,33 +27,3 @@
   flex-direction: column;
   text-align: center;
 }
-
-:host([alignLeft]) {
-  text-align: left;
-}
-
-.imageWrapper {
-  width: 19rem; //1rem grid
-  height: 19rem; //1rem grid
-  margin-top: 0;
-  margin-bottom: 1rem;
-
-  ::slotted(img) {
-    display: block;
-    width: 100%;
-  }
-}
-
-.description {
-  max-width: 19rem; //1rem grid
-  display: block;
-}
-
-.disclaimer {
-  color: var(--auro-color-text-secondary-on-light);
-  font-size: var(--auro-text-body-size-xs);
-}
-
-auro-header {
-  max-width: 19rem;
-}
