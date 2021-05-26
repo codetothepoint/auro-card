@@ -46,11 +46,9 @@ describe('<auro-banner>', () => {
     await expect(el.getElementsByClassName('bannerWrapper')).to.not.be.null;
     await expect(el.shadowRoot.innerHTML.indexOf('prefersLeft') > 0).to.equal(true);
     await expect(el.shadowRoot.innerHTML.indexOf('prefersRight') > 0).to.equal(false);
-    
-    await expect(el.shadowRoot.innerHTML.match(/<.*left.*>/)[0].match(/flex-grow: ([0-9]);/)[1]).to.equal('1');
-    await expect(el.shadowRoot.innerHTML.match(/<.*right.*>/)[0].match(/flex-grow: ([0-9]);/)[1]).to.equal('3');
 
-    //<slot name="left" style="flex-grow: 1;"></slot>
+    await expect(el.shadowRoot.innerHTML.match(/<div class="item" style="width: ([0-9]+)%;">/gm)[0].match(/width: ([0-9]+)%;/)[1]).to.equal('25');
+    await expect(el.shadowRoot.innerHTML.match(/<div class="item" style="width: ([0-9]+)%;">/gm)[1].match(/width: ([0-9]+)%;/)[1]).to.equal('75');
   });
 
   it('with right preference', async () => {
@@ -127,8 +125,8 @@ describe('<auro-banner>', () => {
     await expect(el.getElementsByClassName('bannerWrapper')).to.not.be.null;
     await expect(el.shadowRoot.innerHTML.indexOf('prefersLeft') > 0).to.equal(false);
     await expect(el.shadowRoot.innerHTML.indexOf('prefersRight') > 0).to.equal(true);
-    
-    await expect(el.shadowRoot.innerHTML.match(/<.*left.*>/)[0].match(/flex-grow: ([0-9]);/)[1]).to.equal('1');
-    await expect(el.shadowRoot.innerHTML.match(/<.*right.*>/)[0].match(/flex-grow: ([0-9]);/)[1]).to.equal('1');
+
+    await expect(el.shadowRoot.innerHTML.match(/<div class="item" style="width: ([0-9]+)%;">/gm)[0].match(/width: ([0-9]+)%;/)[1]).to.equal('50');
+    await expect(el.shadowRoot.innerHTML.match(/<div class="item" style="width: ([0-9]+)%;">/gm)[1].match(/width: ([0-9]+)%;/)[1]).to.equal('50');
   });
 });
