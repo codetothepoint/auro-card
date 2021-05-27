@@ -32,10 +32,25 @@
   justify-content: center;
   align-items: center;
   align-content: flex-start;
+}
 
-  .overlay {
-    position: absolute;
-  }
+.overlayContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -1.25rem;
+}
+
+.overlayBg {
+  width: 7.5rem;
+  height: 7.5rem;
+  background: var(--auro-color-brand-neutral-400);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
 }
 
 // When at the smaller breakpoints

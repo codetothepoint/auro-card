@@ -164,18 +164,11 @@ The following example illustrates how to use the `ratio` property to control the
       <img src="https://picsum.photos/id/42/225/550" alt="" />
     </picture>
     <div slot="left">
-      <span>Beverages and cocktails</span>
-      <p>
-        <span style="max-width: 360px;display: block;">Enjoy soft drinks, fresh Starbucks® coffee – including lattes and cappuccinos, and Teavana® tea while you relax. Or try our famous Bloody Mary.</span>
-      </p>
-      <auro-hyperlink
-        cta
-        secondary
-        ondark
-        href="/"
-        target="_blank">
-        More info
-      </auro-hyperlink>
+     <auro-header level="2" display="800" margin="both" size="none" style="color:#0b5575">Lorem ipsum dolor</auro-header>
+    <div style="color:#0b5575; margin-bottom: 1rem">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus, quod aperiam a aut fuga qui eos reprehenderit facilis vero.
+    </div>
+    <auro-hyperlink secondary cta href="#" target="_blank" >Reprehenderit</auro-hyperlink>
     </div>
   </auro-banner>
 </div>
@@ -194,7 +187,12 @@ The following example illustrates how to use the `ratio` property to control the
     <img src="https://picsum.photos/id/42/225/550" alt="" />
   </picture>
   <div slot="left">
-    <span>Beverages and cocktails</span>
+    <auro-header level="2" display="800" margin="both" size="none" style="color:#0b5575">Lorem ipsum dolor</auro-header>
+    <div style="color:#0b5575; margin-bottom: 1rem">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus, quod aperiam a aut fuga qui eos reprehenderit facilis vero.
+    </div>
+    <auro-hyperlink secondary cta href="#" target="_blank" >Reprehenderit</auro-hyperlink>
+     <span>Beverages and cocktails</span>
     <p>
       <span style="max-width: 360px;display: block;">Enjoy soft drinks, fresh Starbucks® coffee – including lattes and cappuccinos, and Teavana® tea while you relax. Or try our famous Bloody Mary.</span>
     </p>
@@ -213,127 +211,21 @@ The following example illustrates how to use the `ratio` property to control the
 
 ## Overlay
 
-The following example illustrates a `<auro-banner>` custom element using the `overlay` slot. This one fixes an icon to the bottom of the banner. Notice how we have to put in custom styling to get it to disappear at smaller screen sizes.
+The following example illustrates a `<auro-banner>` custom element using the `overlay` slot. You'll need to include the boolean `overlay` to display the overlay.  This fixes an icon to the bottom of the banner.
 
 <div class="exampleWrapper">
-  <auro-banner>
-    <picture slot="right">
-      <source srcset="https://picsum.photos/id/369/2048/2000" media="(min-width: 1024px)">
-      <source srcset="https://picsum.photos/id/369/736/1400" media="(min-width:660px)">
-      <img src="https://picsum.photos/id/369/660/420" alt="">
-    </picture>
+  <auro-banner overlay overlayBg="var(--auro-color-brand-neutral-400)">
+      <auro-background slot="right" minheight="215px" minheightsm="300px" background="#b4cdd2 url(https://images.unsplash.com/photo-1500304624028-5b2641868ade?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80) right center/cover no-repeat;"></auro-background>
     <div slot="left">
-      <span>Duis aute irure dolor</span>
-      <span>Duis aute irure dolor.<br>Excepteur sint occaecat.</span>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
-      <auro-hyperlink
-        cta
-        secondary
-        href="/"
-        target="_blank">
-        More info
-      </auro-hyperlink>
-    </div>
-    <p slot="overlay" style="width: 5rem; background: lightgray; border-radius: 50%; position: absolute">
-      <auro-icon category="social" name="instagram" customSize customColor style="color: var(--auro-color-base-white); width: 5rem"></auro-icon>
-    </p>
-  </auro-banner>
-</div>
-
-<auro-accordion lowProfile justifyRight>
-<span slot="trigger">See code</span>
-
-```html
-<auro-banner>
-  <picture slot="right">
-    <source srcset="https://picsum.photos/id/369/2048/2000" media="(min-width: 1024px)">
-    <source srcset="https://picsum.photos/id/369/736/1400" media="(min-width:660px)">
-    <img src="https://picsum.photos/id/369/660/420" alt="">
-  </picture>
-  <div slot="left">
-    <span>Duis aute irure dolor</span>
-    <span>Duis aute irure dolor.<br>Excepteur sint occaecat.</span>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-    <auro-hyperlink
-      cta
-      secondary
-      href="/"
-      target="_blank">
-      More info
-    </auro-hyperlink>
-  </div>
-  <p slot="overlay" style="width: 5rem; background: lightgray; border-radius: 50%;">
-    <auro-icon category="social" name="instagram" customSize customColor style="color: var(--auro-color-base-white); width: 5rem"></auro-icon>
-  </p>
-</auro-banner>
-```
-</auro-accordion>
-
-
-## Ommiting a side
-
-The following example illustrates a `<auro-banner>` custom element with one of the sides ommitted, if only the `left` or the `right` slot is filled, then it will take up the whole space.
-
-<div class="exampleWrapper">
-  <auro-banner>
-    <div slot="right">
-      <span>
-        <auro-header level="2" display="800" margin="both" size="none">Lorem ipsum title</auro-header>
-        <auro-header level="3" display="300" margin="top" size="none">You can add multiple auro-header's here</auro-header>
-      </span>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus, quod aperiam a aut fuga qui eos reprehenderit facilis vero.
-      </p>
-    </div>
-  </auro-banner>
-</div>
-
-<auro-accordion lowProfile justifyRight>
-<span slot="trigger">See code</span>
-
-```html
-<auro-banner>
-  <div slot="right">
-    <span>
-      <auro-header level="2" display="800" margin="both" size="none">Lorem ipsum title</auro-header>
-      <auro-header level="3" display="300" margin="top" size="none">You can add multiple auro-header's here</auro-header>
-    </span>
-    <p>
+      <auro-header level="2" display="800" margin="both" size="none" style="color:#0b5575">Lorem ipsum dolor</auro-header>
+    <div style="color:#0b5575; margin-bottom: 1rem">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus, quod aperiam a aut fuga qui eos reprehenderit facilis vero.
-    </p>
-  </div>
-</auro-banner>
-```
-</auro-accordion>
-
-## Using the auro-banner with the auro-background
-
-The following example illustrates a `<auro-banner>` custom element with the `marquee` template style. This template configuration also supports the `slim` and `onDark` attributes.
-
-<div class="exampleWrapper">
-  <auro-banner marquee>
-    <picture slot="displayImage">
-      <source srcset="https://picsum.photos/id/154/2048/2000" media="(min-width: 1024px)">
-      <source srcset="https://picsum.photos/id/154/736/1400" media="(min-width:660px)">
-      <img src="https://picsum.photos/id/154/660/420" alt="">
-    </picture>
-    <span slot="prefix">Duis aute irure dolor</span>
-    <span slot="title">Duis aute irure dolor.<br>Excepteur sint occaecat.</span>
-    <p slot="description">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-    <auro-hyperlink
-      cta
-      secondary
-      href="/"
-      slot="action"
-      target="_blank">
-      More info
-    </auro-hyperlink>
+    </div>
+    <auro-hyperlink primary cta href="#" target="_blank" >Reprehenderit</auro-hyperlink>
+    </div>
+    <span slot="overlay">
+      <auro-icon category="social" name="instagram" customSize customColor style="color: var(--auro-color-base-white); width: 5rem"></auro-icon>
+    </span>
   </auro-banner>
 </div>
 
@@ -341,78 +233,44 @@ The following example illustrates a `<auro-banner>` custom element with the `mar
 <span slot="trigger">See code</span>
 
 ```html
-<auro-banner marquee>
-  <picture slot="displayImage">
-    <source srcset="https://picsum.photos/id/154/2048/2000" media="(min-width: 1024px)">
-    <source srcset="https://picsum.photos/id/154/736/1400" media="(min-width:660px)">
-    <img src="https://picsum.photos/id/154/660/420" alt="">
-  </picture>
-  <span slot="prefix">Duis aute irure dolor</span>
-  <span slot="title">Duis aute irure dolor.<br>Excepteur sint occaecat.</span>
-  <p slot="description">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  </p>
-  <auro-hyperlink
-    cta
-    secondary
-    href="/"
-    slot="action"
-    target="_blank">
-    More info
-  </auro-hyperlink>
-</auro-banner>
+
 ```
 </auro-accordion>
 
-## Marquee / solid
 
-The following example illustrates a `<auro-banner>` custom element with the `marquee solid` template style. With this configuration, `onDark` is implied.
+## Wrapping auro-banner
+
+The following example illustrates a `<auro-banner>` custom element wrapped in `<auro-background>` with only the `left` slot is filled.  When used with an `<auro-background>` you'll likely want to adjust the padding of this component using the `leftSidePadding` property.
 
 <div class="exampleWrapper">
-  <auro-banner marquee solid>
-    <picture slot="displayImage">
-      <source srcset="https://picsum.photos/id/1015/1048/2000" media="(min-width: 1024px)">
-      <source srcset="https://picsum.photos/id/1015/736/1400" media="(min-width:660px)">
-      <img src="https://picsum.photos/id/1015/660/660" alt="">
-    </picture>
-    <auro-alaska official ondark style="width: 192px" slot="contentImage"></auro-alaska>
-    <p slot="description">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-    <auro-hyperlink
-      cta
-      ondark
-      href="/"
-      slot="action"
-      target="_blank">
-      More info
-    </auro-hyperlink>
-  </auro-banner>
+  <auro-background minheight="215px" minheightsm="390px" background="#b4cdd2 url(https://images.unsplash.com/photo-1500304624028-5b2641868ade?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80) right center/cover no-repeat;">
+    <auro-banner leftSidePadding="var(--auro-size-xxl)">
+      <div slot="left">
+      <auro-header level="2" display="800" margin="both" size="none" style="color:#0b5575">Lorem ipsum dolor</auro-header>
+    <div style="color:#0b5575; margin-bottom: 1rem">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus, quod aperiam a aut fuga qui eos reprehenderit facilis vero.
+    </div>
+    <auro-hyperlink secondary cta href="#" target="_blank" >Reprehenderit</auro-hyperlink>
+    </div>
+    </auro-banner>
+  </auro-background>
 </div>
 
 <auro-accordion lowProfile justifyRight>
 <span slot="trigger">See code</span>
 
 ```html
-<auro-banner marquee solid>
-  <picture slot="displayImage">
-    <source srcset="https://picsum.photos/id/1015/1048/2000" media="(min-width: 1024px)">
-    <source srcset="https://picsum.photos/id/1015/736/1400" media="(min-width:660px)">
-    <img src="https://picsum.photos/id/1015/660/660" alt="">
-  </picture>
-  <auro-alaska official ondark style="width: 192px" slot="contentImage"></auro-alaska>
-  <p slot="description">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  </p>
-  <auro-hyperlink
-    cta
-    ondark
-    href="/"
-    slot="action"
-    target="_blank">
-    More info
-  </auro-hyperlink>
-</auro-banner>
+<auro-background minheight="215px" minheightsm="390px" background="#b4cdd2 url(https://images.unsplash.com/photo-1500304624028-5b2641868ade?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80) right center/cover no-repeat;">
+    <auro-banner leftSidePadding="var(--auro-size-xxl)">
+      <div slot="left">
+      <auro-header level="2" display="800" margin="both" size="none" style="color:#0b5575">Lorem ipsum dolor</auro-header>
+    <div style="color:#0b5575; margin-bottom: 1rem">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus, quod aperiam a aut fuga qui eos reprehenderit facilis vero.
+    </div>
+    <auro-hyperlink secondary cta href="#" target="_blank" >Reprehenderit</auro-hyperlink>
+    </div>
+    </auro-banner>
+  </auro-background>
 ```
 </auro-accordion>
 
@@ -421,27 +279,16 @@ The following example illustrates a `<auro-banner>` custom element with the `mar
 The following example illustrates a `<auro-banner>` custom element with the `roundedBorder` variant style. With this configuration, no `displayImage` is used.  Instead only the `contentImage` is used and the rest of the offer is displayed in a row.
 
 <div class="exampleWrapper">
-  <auro-banner roundedBorder alignLeft>
+  <auro-banner roundedBorder ratio="2:4" leftSidePadding="var(--auro-size-xl) var(--auro-size-none) var(--auro-size-xl) var(--auro-size-xl)" rightSidePadding="var(--auro-size-xl)">
     <div slot="left">
       <img src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="" slot="contentImage" />
     </div>
     <div slot="right">
-      <span slot="prefix">Prefix - Limited Time</span>
-      <span slot="title">Title - Irure dolor.</span>
-      <p slot="description">
-        Description - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </p>
-      <div slot="disclaimer">
-        * Disclaimer - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </div>
-      <auro-hyperlink
-        cta
-        secondary
-        href="/"
-        slot="action"
-        target="_blank">
-        More info
-      </auro-hyperlink>
+       <auro-header level="2" display="800" margin="both" size="none" style="color:#0b5575">Lorem ipsum dolor</auro-header>
+    <div style="color:#0b5575; margin-bottom: 1rem">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus, quod aperiam a aut fuga qui eos reprehenderit facilis vero.
+    </div>
+    <auro-hyperlink secondary cta href="#" target="_blank" >Reprehenderit</auro-hyperlink>
     </div>
   </auro-banner>
 </div>
@@ -450,7 +297,7 @@ The following example illustrates a `<auro-banner>` custom element with the `rou
 <span slot="trigger">See code</span>
 
 ```html
-<auro-banner roundedBorder alignLeft>
+<auro-banner roundedBorder alignLeft ratio="1:4">
   <img src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="" slot="contentImage" />
   <span slot="prefix">Prefix - Limited Time</span>
   <span slot="title">Title - Irure dolor.</span>
