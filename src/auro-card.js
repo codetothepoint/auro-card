@@ -6,6 +6,7 @@
 // ---------------------------------------------------------------------
 
 import { LitElement, html, css } from "lit-element";
+import { styleMap } from 'lit-html/directives/style-map';
 
 // Import touch detection lib
 import "focus-visible/dist/focus-visible.min.js";
@@ -17,13 +18,24 @@ import "@alaskaairux/auro-header";
 /**
  * The auro-card element provides users a flexible way to convey a summary of information.
  *
- * @slot title - card heading
- * @slot image - card image placement
- * @slot description - main body of copy
- * @slot cta - call to action
- * @slot disclaimer - disclaimer copy
+ * @attr {Integer} width - The width of the card, if not set, it will fill the container.
+ * @attr {Integer} height - The height of the card, if not set, it will fill the container.
+ * @slot title - Content for the card heading.
+ * @slot top - Content on the top of the banner.
+ * @slot bottom - Content on the bottom of the banner.
  */
 class AuroCard extends LitElement {
+
+  static get properties() {
+    return {
+      width: {
+        type: String
+      },
+      height: {
+        type: String
+      }
+    };
+  }
 
   static get styles() {
     return css`
@@ -34,19 +46,24 @@ class AuroCard extends LitElement {
   // function that renders the HTML and CSS into  the scope of the component
   render() {
 
+    const cardStyles = {
+      'width': this.width,
+      'height': this.height
+    };
+
     return html`
-      <auro-header slot="title" level="2" display="600">
-        <slot name="title"></slot>
-      </auro-header>
+      <div style=${styleMap(cardStyles)}>
+        <auro-header slot="title" level="2" display="600">
+          <slot name="title"></slot>
+        </auro-header>
 
-      <div class="imageWrapper">
-        <slot name="image"></slot>
-      </div>
+        <div class="top">
+          <slot name="top"></slot>
+        </div>
 
-      <div>
-        <slot name="description" class="description"></slot>
-        <slot name="action"></slot>
-        <slot name="disclaimer" class="disclaimer"></slot>
+        <div>
+          <slot name="bottom"></slot>
+        </div>
       </div>
     `;
   }
