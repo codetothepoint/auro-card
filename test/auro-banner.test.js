@@ -1,7 +1,6 @@
 /* eslint-disable no-undef, sort-vars, no-implicit-coercion */
 
 import { fixture, html, expect } from '@open-wc/testing';
-// import sinon from 'sinon';
 import '../src/auro-banner';
 
 describe('<auro-banner>', () => {    
@@ -40,8 +39,6 @@ describe('<auro-banner>', () => {
         </div>        
       </auro-banner>
     `);
-
-    //console.log(el.shadowRoot.innerHTML);
 
     await expect(el.getElementsByClassName('bannerWrapper')).to.not.be.null;
     await expect(el.shadowRoot.innerHTML.indexOf('prefersLeft') > 0).to.equal(true);
