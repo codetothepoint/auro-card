@@ -22,6 +22,7 @@ import "@alaskaairux/auro-header";
  * The auro-card-hero element provides users a flexible way to convey a summary of information in various large formats.
  * @attr {Boolean} prefersLeft - The left column will move to the top at the lower breakpoint
  * @attr {Boolean} prefersRight - The right column will move to the top at the lower breakpoint.  If both or neither are set, `prefersRight` is the default.
+ * @attr {Boolean} onBackground - This setting provides padding around the banner when used on a background color or image.
  * @attr {String} overlayBg - Sets a background behind the overlay
  * @attr {String} ratio - in the format 'X:Y' where 'X' and 'Y' are two integers.
  * @slot left - Content in the left column.
@@ -35,32 +36,36 @@ class AuroBanner extends LitElement {
     this.prefersLeft = false;
     this.prefersRight = false;
     this.overlay = false;
-    this.overlayBg = "transparent";
-    this.leftSidePadding = "var(--auro-size-xxl) var(--auro-size-xxl) var(--auro-size-xxl) var(--auro-size-none)";
-    this.rightSidePadding = "";
+    this.overlayBg = "var(--auro-color-brand-neutral-400)";
+    this.gap = "var(--auro-size-xl)";
+    this.inset = "var(--auro-size-none)"
   }
 
   static get properties() {
     return {
       prefersLeft: {
         type: Boolean,
+        reflect: true
       },
       prefersRight: {
         type: Boolean,
+        reflect: true
       },
-      ratio: {
-        type: String,
+      onBackground: {
+        type: Boolean,
+        reflect: true
       },
       overlay: {
         type: Boolean,
+        reflect: true
       },
       overlayBg: {
         type: String,
       },
-      leftSidePadding: {
+      gap: {
         type: String,
       },
-      rightSidePadding: {
+      ratio: {
         type: String,
       }
     };
@@ -87,12 +92,10 @@ class AuroBanner extends LitElement {
         prefersLeft: this.prefersLeft && !this.prefersRight,
       },
       leftSlotStyles = {
-        width: `${leftPercent}%`,
-        padding: `${this.leftSidePadding}`,
+        flexBasis: `${leftPercent}%`,
       },
       rightSlotStyles = {
-        width: `${rightPercent}%`,
-        padding: `${this.rightSidePadding}`,
+        flexBasis: `${rightPercent}%`,
       };
 
     return html`
@@ -100,6 +103,7 @@ class AuroBanner extends LitElement {
         <div class="item" style=${styleMap(leftSlotStyles)}>
           <slot name="left"></slot>
         </div>
+        <div class="gap" style="height:${this.gap};width:${this.gap}"></div>
         <div class="item" style=${styleMap(rightSlotStyles)}>
           <slot name="right"></slot>
         </div>
