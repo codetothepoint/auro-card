@@ -365,3 +365,176 @@ The following example illustrates a `<auro-banner>` custom element with the `rou
   </auro-background>
 ```
 </auro-accordion>
+
+<div class="exampleWrapper">
+    <auro-banner>
+      <div slot="left">
+        <auro-header level="2" color="var(--auro-color-brand-midnight-400)" display="300" margin="top" size="none"><b>one</b>world<sup>&reg;</sup> Alliance</span></auro-header>
+        <auro-header level="2" color="var(--auro-color-brand-midnight-400)" display="600" margin="top" size="none" class="title">14 global airlines.<br>One bright alliance.</auro-header>
+        <div style="margin-bottom: 1rem">
+          Say hi to <b>one</b>world, an alliance of the world’s leading airlines providing the highest level of service and convenience across more than 1,000 destinations worldwide.
+        </div>
+        <auro-hyperlink slot="action" href="https://www.oneworld.com/" target="_blank" cta="true" secondary="true" nav="true">About <strong>one</strong>world</auro-hyperlink>
+      </div>
+      <div slot="right">
+        <auro-background minheight="250px" minheightsm="422px" minheightmd="335px" background="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/oneworld-hub/Hero-S.png) center center/cover" backgroundsm="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/oneworld-hub/Hero-L.jpg) bottom center/cover"></auro-background>
+      </div>
+    </auro-banner>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+<span slot="trigger">See code</span>
+
+```html
+     <auro-banner>
+      <div slot="left">
+        <auro-header level="2" color="var(--auro-color-brand-midnight-400)" display="300" margin="top" size="none"><b>one</b>world<sup>&reg;</sup> Alliance</span></auro-header>
+        <auro-header level="2" color="var(--auro-color-brand-midnight-400)" display="600" margin="top" size="none" class="title">14 global airlines.<br>One bright alliance.</auro-header>
+        <div style="margin-bottom: 1rem">
+          Say hi to <b>one</b>world, an alliance of the world’s leading airlines providing the highest level of service and convenience across more than 1,000 destinations worldwide.
+        </div>
+        <auro-hyperlink slot="action" href="https://www.oneworld.com/" target="_blank" cta="true" secondary="true" nav="true">About <strong>one</strong>world</auro-hyperlink>
+      </div>
+      <div slot="right">
+        <auro-background minheight="250px" minheightsm="422px" minheightmd="335px" background="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/oneworld-hub/Hero-S.png) center center/cover" backgroundsm="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/oneworld-hub/Hero-L.jpg) bottom center/cover"></auro-background>
+      </div>
+    </auro-banner>
+```
+</auro-accordion>
+
+<div class="exampleWrapper">
+    <auro-banner ratio="16:17">
+      <div slot="left">
+        <auro-header level="2" color="var(--auro-color-brand-midnight-400)" display="600" margin="top" size="none" class="title">Relax before the runway.</auro-header>
+        <div style="margin-bottom: 1rem">
+         Find some peace and quiet at one of more than 650 <b>one</b>world airport lounges worldwide. Get work done between flights using fast Wi-Fi, grab a quick bite or freshen up with a warm shower. Go ahead, you deserve it.
+        </div>
+        <auro-hyperlink href="https://www.oneworld.com/airport-lounges?location=SEA" target="_blank" cta="true" secondary="true" nav="true"><span>Explore lounges</span></auro-hyperlink>
+      </div>
+      <div slot="right">
+        <auro-background minheight="250px" minheightsm="422px" minheightmd="335px" background="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/oneworld-hub/Lounge-S.png) center center/cover" backgroundsm="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/oneworld-hub/Lounge-L.png) bottom center/cover"></auro-background>
+      </div>
+    </auro-banner>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+<span slot="trigger">See code</span>
+
+```html
+     <auro-banner ratio="16:17">
+      <div slot="left">
+        <auro-header level="2" color="var(--auro-color-brand-midnight-400)" display="600" margin="top" size="none" class="title">Relax before the runway.</auro-header>
+        <div style="margin-bottom: 1rem">
+         Find some peace and quiet at one of more than 650 <b>one</b>world airport lounges worldwide. Get work done between flights using fast Wi-Fi, grab a quick bite or freshen up with a warm shower. Go ahead, you deserve it.
+        </div>
+        <auro-hyperlink href="https://www.oneworld.com/airport-lounges?location=SEA" target="_blank" cta="true" secondary="true" nav="true"><span>Explore lounges</span></auro-hyperlink>
+      </div>
+      <div slot="right">
+        <auro-background minheight="250px" minheightsm="422px" minheightmd="335px" background="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/oneworld-hub/Lounge-S.png) center center/cover" backgroundsm="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/oneworld-hub/Lounge-L.png) bottom center/cover"></auro-background>
+      </div>
+    </auro-banner>
+```
+</auro-accordion>
+
+<div class="exampleWrapper">
+    <auro-banner>
+      <div slot="left">
+      <img src="https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/Alaska-Lift-Lockup-reverse-Sm.svg" alt="Alaska Airlines and Lift logos">
+        <auro-header level="2" display="600" color="var(--auro-color-background-darker)">We make flying matter.</auro-header>
+        <div style="margin-bottom: 1rem">
+         LIFT is what we call our work to run our company with care, focusing on social and environmental impact. Join us as we take action on initiatives to support our people and our planet.
+        </div>
+       <auro-hyperlink onclick="trackBtnClick()" secondary="" cta="" href="https://flysustainably.com/wp-content/uploads/2021/05/CR_032921_2021-Lift-Report_Final-1.pdf" target="_blank">View 2020 report</auro-hyperlink>
+      </div>
+      <div slot="right">
+        <auro-background minheight="250px" minheightsm="422px" minheightmd="335px" background="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/Wing_500x500.png) center center/cover"></auro-background>
+      </div>
+    </auro-banner>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+<span slot="trigger">See code</span>
+
+```html
+     <auro-banner>
+      <div slot="left">
+      <img src="https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/Alaska-Lift-Lockup-reverse-Sm.svg" alt="Alaska Airlines and Lift logos">
+        <auro-header level="2" display="600" color="var(--auro-color-background-darker)">We make flying matter.</auro-header>
+        <div style="margin-bottom: 1rem">
+         LIFT is what we call our work to run our company with care, focusing on social and environmental impact. Join us as we take action on initiatives to support our people and our planet.
+        </div>
+        <auro-hyperlink onclick="trackBtnClick()" secondary="" cta="" href="https://flysustainably.com/wp-content/uploads/2021/05/CR_032921_2021-Lift-Report_Final-1.pdf" target="_blank">View 2020 report</auro-hyperlink>
+      </div>
+      <div slot="right">
+        <auro-background minheight="250px" minheightsm="422px" minheightmd="335px" background="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/Wing_500x500.png) center center/cover"></auro-background>
+      </div>
+    </auro-banner>
+```
+</auro-accordion>
+
+<div class="exampleWrapper">
+  <auro-background minheight="475px" background="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/UNCF_merch_1167x282.jpg) left bottom/cover" minheightsm="200px">
+      <auro-banner ratio="3:5" onbackground>
+        <div slot="right">
+          <img src="https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/AS_UNCF_Lockup.svg">
+          <div style="margin-bottom: 1rem">
+          Our newest special aircraft is a symbol of Our Commitment to making Alaska a place where everyone feels like they belong.
+          </div>
+        <auro-hyperlink secondary="" cta="" href="/content/about-us/esg/people/uncf">Learn about Our Commitment</auro-hyperlink>
+        </div>
+      </auro-banner>
+    </auro-background>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+<span slot="trigger">See code</span>
+
+```html
+       <auro-background minheight="475px" background="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/UNCF_merch_1167x282.jpg) left bottom/cover" minheightsm="200px">
+      <auro-banner ratio="3:5" onbackground>
+        <div slot="right">
+          <img src="https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/AS_UNCF_Lockup.svg">
+          <div style="margin-bottom: 1rem">
+          Our newest special aircraft is a symbol of Our Commitment to making Alaska a place where everyone feels like they belong.
+          </div>
+        <auro-hyperlink secondary="" cta="" href="/content/about-us/esg/people/uncf">Learn about Our Commitment</auro-hyperlink>
+        </div>
+      </auro-banner>
+    </auro-background>
+```
+</auro-accordion>
+
+
+<div class="exampleWrapper">
+  <auro-background background="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/oneworld-hub/T-Bright-Small.png) center bottom/cover" minheight="530px" backgroundsm="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/oneworld-hub/Tbright-L.png) left center/cover" minheightsm="200px">
+    <auro-banner gap="0" ratio="0:1" onbackground>
+      <div slot="right" style="text-align:center; align-self: center">
+        <img src="https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png">
+        <div style="margin: 1rem auto;max-width: 500px;">
+           With more than 1,000 destinations in 170 territories, oneworld fares let you travel the world with ease.
+        </div>
+        <auro-hyperlink href="https://www.oneworld.com/flight-search" target="_blank" cta="true" secondary="true" nav="true"><span>Search flights</span></auro-hyperlink>
+      </div>
+    </auro-banner>
+  </auro-background>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+<span slot="trigger">See code</span>
+
+```html
+  <auro-background minheight="475px" backgroundsm="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/oneworld-hub/Tbright-L.png) left center/cover" minheightsm="200px">
+    <auro-banner gap="0" ratio="0:1" onbackground>
+      <div slot="right" style="text-align:center; align-self: center">
+        <img src="https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png">
+        <div style="margin: 1rem auto;max-width: 500px;">
+           With more than 1,000 destinations in 170 territories, oneworld fares let you travel the world with ease.
+        </div>
+        <auro-hyperlink href="https://www.oneworld.com/flight-search" target="_blank" cta="true" secondary="true" nav="true"><span>Search flights</span></auro-hyperlink>
+      </div>
+    </auro-banner>
+  </auro-background>
+```
+</auro-accordion>
+
+
