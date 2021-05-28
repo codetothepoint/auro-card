@@ -32,25 +32,38 @@
   justify-content: center;
   align-items: center;
   align-content: flex-start;
+}
 
-  .overlay {
-    position: absolute;
-  }
+.overlayContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -1.25rem;
+}
+
+.overlayBg {
+  width: 7.5rem;
+  height: 7.5rem;
+  background: var(--auro-color-brand-neutral-400);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
 }
 
 // When at the smaller breakpoints
-@media screen and (max-width: $auro-breakpoint-md) {
-  .bannerWrapper {
-    &.prefersLeft {
-      flex-direction: column;
-    }
-    
-    &.prefersRight {
-      flex-direction: column-reverse;
-    }
-    .item {
-      width: 100% !important;
-    }
+@media screen and (max-width: $auro-breakpoint-sm) {
+  .item {
+    width: 100% !important;
+  }
+  .prefersLeft {
+    flex-direction: column;
+  }
+
+  .prefersRight {
+    flex-direction: column-reverse;
   }
 }
 
@@ -58,5 +71,14 @@
   .bannerWrapper {
     border: 1px solid var(--auro-color-border-primary-on-light);
     border-radius: 5px;
+    padding: var(--auro-size-lg);
   }
 }
+
+:host([onBackground]) { 
+  .bannerWrapper {
+    padding: var(--auro-size-xl);
+  }
+}
+
+

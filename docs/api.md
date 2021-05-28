@@ -4,17 +4,19 @@ The auro-card-hero element provides users a flexible way to convey a summary of 
 
 ## Properties
 
-| Property       | Attribute      | Type      | Default |
-|----------------|----------------|-----------|---------|
-| `prefersLeft`  | `prefersLeft`  | `boolean` | false   |
-| `prefersRight` | `prefersRight` | `boolean` | false   |
-| `ratio`        | `ratio`        | `string`  | "1:1"   |
+| Property       | Attribute      | Type      | Default | Description                                      |
+|----------------|----------------|-----------|---------|--------------------------------------------------|
+| `prefersLeft`  | `prefersLeft`  | `Boolean` | false   | The left column will move to the top at the lower breakpoint |
+| `prefersRight` | `prefersRight` | `Boolean` | false   | The right column will move to the top at the lower breakpoint.  If both or neither are set, `prefersRight` is the default. |
+| `ratio`        | `ratio`        | `String`  | "1:1"   | in the format 'X:Y' where 'X' and 'Y' are two integers. |
 
 ## Slots
 
-| Name | Description |
-|------|-------------|
-|      | left -      |
+| Name      | Description                   |
+|-----------|-------------------------------|
+| `left`    | Content in the left column.   |
+| `overlay` | Content in the front overlay. |
+| `right`   | Content in the right column.  |
 
 
 # auro-card
