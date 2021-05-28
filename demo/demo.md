@@ -83,10 +83,10 @@ The card will expand to expand to fill the container it's in. The element will r
 To set the height and width of the card instead of having it fill the container it's in, use the `height` and `width` properties.
 
 <div class="exampleWrapper">
-  <auro-card width="19rem" height="31rem">
+  <auro-card width="19rem" height="25rem">
     <img
       slot="top"
-      src="https://picsum.photos/304?random=1"
+      src="https://picsum.photos/304/200?random=1"
       alt="Random insert 0"/>
     <div slot="bottom">
       <p>
@@ -109,10 +109,10 @@ To set the height and width of the card instead of having it fill the container 
 <span slot="trigger">See code</span>
 
 ```html
-<auro-card width="19rem" height="31rem">
+<auro-card width="19rem" height="25rem">
   <img
     slot="top"
-    src="https://picsum.photos/304?random=1"
+    src="https://picsum.photos/304/200?random=1"
     alt="Random insert 0"/>
   <div slot="bottom">
     <p>
@@ -134,7 +134,7 @@ To set the height and width of the card instead of having it fill the container 
 </auro-accordion>
 
 ## Adding in styles
-Add in styles into the slot elements to style the content any way you want. The following is an example of text aligning to the left side of the container and dark blue text.
+Add in styles into the slot elements to style the content any way you want. The following is an example of text aligning to the left side of the card and dark blue text.
 
 <style>
   .textContainer {
@@ -144,12 +144,13 @@ Add in styles into the slot elements to style the content any way you want. The 
 </style>
 
 <div class="exampleWrapper">
-  <auro-card width="19rem" height="31rem">
+  <auro-card width="19rem" height="36rem">
     <img
       slot="top"
       src="https://picsum.photos/304?random=2"
       alt="Random insert 0"/>
     <div class="textContainer" slot="bottom">
+      <auro-header display="500">Pri dicat graece abhorreant</auro-header>
       <p>
         Ei est detracto fabellas convenire, vivendo accusata intellegebat ex mei. Pri dicat graece abhorreant ut, sea ei vidit omnes, errem tempor eligendi cu eos.
       </p>
@@ -177,12 +178,13 @@ Add in styles into the slot elements to style the content any way you want. The 
   }
 </style>
 
-<auro-card width="19rem" height="31rem">
+<auro-card width="19rem" height="36rem">
   <img
     slot="top"
     src="https://picsum.photos/304?random=2"
     alt="Random insert 0"/>
   <div class="textContainer" slot="bottom">
+    <auro-header display="500">Pri dicat graece abhorreant</auro-header>
     <p>
       Ei est detracto fabellas convenire, vivendo accusata intellegebat ex mei. Pri dicat graece abhorreant ut, sea ei vidit omnes, errem tempor eligendi cu eos.
     </p>
