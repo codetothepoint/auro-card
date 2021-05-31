@@ -17,7 +17,7 @@ Use `<auro-banner>` as the primary source of information.
 
 ## Default element
 
-The default `<auro-banner>` element features configuration options when using using the `content` and `graphic` slots for structured content placement.
+The default `<auro-banner>` element using the `content` and `graphic` slots for structured content placement.
 
 <div class="exampleWrapper">
   <auro-banner>
