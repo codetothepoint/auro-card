@@ -23,47 +23,98 @@
 
 .bannerWrapper {
   color: var(--auro-color-text-primary-on-light);
-  position: relative;
-
-  // Flex rules
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
-  align-content: flex-start;
-}
 
-.overlayContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  top: -1.25rem;
-}
-
-.overlayBg {
-  width: 7.5rem;
-  height: 7.5rem;
-  background: var(--auro-color-brand-neutral-400);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-}
-
-// When at the smaller breakpoints
-@media screen and (max-width: $auro-breakpoint-sm) {
-  .item {
-    width: 100% !important;
+  @include auro_breakpoint--sm {
+    flex-direction: row;
   }
-  .prefersLeft {
-    flex-direction: column;
+}
+.item {
+  width: 100% !important;
+  @include auro_breakpoint--sm {
+    width: auto;
+  }
+}
+.content {
+  @include auro_breakpoint--sm {
+    padding-right: var(--auro-size-xl);
+  }
+}
+.graphic {
+  margin-bottom: var(--auro-size-xl);
+
+  @include auro_breakpoint--sm {
+    margin-bottom: var(--auro-size-none);
+  }
+}
+::slotted(img) {
+  display: flex;
+}
+
+:host([flipped]) {
+  .bannerWrapper {
+    @include auro_breakpoint--sm {
+      flex-direction: row-reverse;
+    }
   }
 
-  .prefersRight {
-    flex-direction: column-reverse;
+  .content {
+    @include auro_breakpoint--sm {
+      padding-left: var(--auro-size-xl);
+    }
+  }
+}
+
+
+:host([overlay]) {
+  .content {
+    padding-bottom: 6.25rem;
+
+    @include auro_breakpoint--sm {
+      padding-right: var(--auro-size-xl);
+      padding-bottom: 0;
+    }
+  }
+  .graphic {
+    display: none;
+    @include auro_breakpoint--sm {
+      display: block;
+    }
+  }
+  .overlayContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -1.25rem;
+  }
+  
+  .overlayBg {
+    width: 7.5rem;
+    height: 7.5rem;
+    background: var(--auro-color-brand-neutral-400);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+  }
+}
+
+:host([onBackground]) { 
+  .bannerWrapper {
+    padding: var(--auro-size-xl);
+  }
+}
+
+:host([inset]) { 
+  .content {
+    @include auro_breakpoint--sm {
+      padding: var(--auro-size-xxl);
+    }
   }
 }
 
@@ -74,11 +125,4 @@
     padding: var(--auro-size-lg);
   }
 }
-
-:host([onBackground]) { 
-  .bannerWrapper {
-    padding: var(--auro-size-xl);
-  }
-}
-
 
